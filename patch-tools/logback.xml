@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 屏蔽logback自身的日志信息的输出 -->
+ 	<statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>info</level>
+		</filter>
+		<!-- encoders 作用是将logger事件转换成字节数组，并将字节数组写入到输出流 -->
+		<encoder>
+			<!-- 格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度 %msg：日志消息，%n是换行符 -->
+			<pattern>%date [%logger:%L]-[%level] %thread %msg%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>patch/logs/log.%d{yyyy-MM-dd}.%i.log
+			</fileNamePattern>
+			<maxHistory>30</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%date [%logger:%L]-[%level] %thread %msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="org.apache">
+		<level value="ERROR" />
+	</logger>
+	<logger name="org.springframework">
+		<level value="ERROR" />
+	</logger>
+    <logger name="com.thunisoft">
+        <level value="INFO" />
+    </logger>
+    
+	<!-- root logger，定义级别为debug -->
+	<root level="INFO">
+		<appender-ref ref="file" />
+		<appender-ref ref="console" />
+	</root>
+
+</configuration>

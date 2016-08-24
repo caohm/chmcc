@@ -1,0 +1,19 @@
+Patch Usage:
+    java -jar Patch.jar [OPTION]...
+    
+        -h help
+        -v version
+        
+ work：
+        -p        project Name     
+        -i        input projectPath    
+        -o        output PatchPath          default：output
+        -u        updateList Directory      default：updateList
+        -e        exclude File              default：exclude.txt
+        -h        help         
+eg:
+
+-p hljgf 
+-u updateList 
+-i f:\svn\cms 
+-o output
