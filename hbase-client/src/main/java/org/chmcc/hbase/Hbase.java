@@ -5,32 +5,26 @@ import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
 import org.apache.hadoop.hbase.HTableDescriptor;
 import org.apache.hadoop.hbase.KeyValue;
-import org.apache.hadoop.hbase.client.Delete;
-import org.apache.hadoop.hbase.client.Get;
-import org.apache.hadoop.hbase.client.HBaseAdmin;
-import org.apache.hadoop.hbase.client.HTable;
-import org.apache.hadoop.hbase.client.Put;
-import org.apache.hadoop.hbase.client.Result;
-import org.apache.hadoop.hbase.client.ResultScanner;
-import org.apache.hadoop.hbase.client.Scan;
+import org.apache.hadoop.hbase.client.*;
 import org.apache.hadoop.hbase.util.Bytes;
 
 import java.io.IOException;
 
 public class Hbase {
-    // ÉùÃ÷¾²Ì¬ÅäÖÃ
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½
     static Configuration conf = null;
+
     static {
         conf = HBaseConfiguration.create();
         conf.set("hbase.zookeeper.quorum", "192.168.213.130");
     }
 
     /*
-     * ´´½¨±í
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      * 
-     * @family ÁÐ×åÁÐ±í
+     * @family ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
      */
     public static void creatTable(String tableName, String[] family)
             throws Exception {
@@ -49,38 +43,38 @@ public class Hbase {
     }
 
     /*
-     * Îª±íÌí¼ÓÊý¾Ý£¨ÊÊºÏÖªµÀÓÐ¶àÉÙÁÐ×åµÄ¹Ì¶¨±í£©
+     * Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½Êºï¿½Öªï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¹Ì¶ï¿½ï¿½ï¿½
      * 
      * @rowKey rowKey
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      * 
-     * @column1 µÚÒ»¸öÁÐ×åÁÐ±í
+     * @column1 ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
      * 
-     * @value1 µÚÒ»¸öÁÐµÄÖµµÄÁÐ±í
+     * @value1 ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ðµï¿½Öµï¿½ï¿½ï¿½Ð±ï¿½
      * 
-     * @column2 µÚ¶þ¸öÁÐ×åÁÐ±í
+     * @column2 ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½
      * 
-     * @value2 µÚ¶þ¸öÁÐµÄÖµµÄÁÐ±í
+     * @value2 ï¿½Ú¶ï¿½ï¿½ï¿½ï¿½Ðµï¿½Öµï¿½ï¿½ï¿½Ð±ï¿½
      */
     public static void addData(String rowKey, String tableName,
-            String[] column1, String[] value1, String[] column2, String[] value2)
+                               String[] column1, String[] value1, String[] column2, String[] value2)
             throws IOException {
-        Put put = new Put(Bytes.toBytes(rowKey));// ÉèÖÃrowkey
-        HTable table = new HTable(conf, Bytes.toBytes(tableName));// HTabel¸ºÔð¸ú¼ÇÂ¼Ïà¹ØµÄ²Ù×÷ÈçÔöÉ¾¸Ä²éµÈ//
-                                                                    // »ñÈ¡±í
-        HColumnDescriptor[] columnFamilies = table.getTableDescriptor() // »ñÈ¡ËùÓÐµÄÁÐ×å
+        Put put = new Put(Bytes.toBytes(rowKey));// ï¿½ï¿½ï¿½ï¿½rowkey
+        HTable table = new HTable(conf, Bytes.toBytes(tableName));// HTabelï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ØµÄ²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½Ä²ï¿½ï¿½//
+        // ï¿½ï¿½È¡ï¿½ï¿½
+        HColumnDescriptor[] columnFamilies = table.getTableDescriptor() // ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ï¿½
                 .getColumnFamilies();
 
         for (int i = 0; i < columnFamilies.length; i++) {
-            String familyName = columnFamilies[i].getNameAsString(); // »ñÈ¡ÁÐ×åÃû
-            if (familyName.equals("article")) { // articleÁÐ×åputÊý¾Ý
+            String familyName = columnFamilies[i].getNameAsString(); // ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            if (familyName.equals("article")) { // articleï¿½ï¿½ï¿½ï¿½putï¿½ï¿½ï¿½ï¿½
                 for (int j = 0; j < column1.length; j++) {
                     put.add(Bytes.toBytes(familyName),
                             Bytes.toBytes(column1[j]), Bytes.toBytes(value1[j]));
                 }
             }
-            if (familyName.equals("author")) { // authorÁÐ×åputÊý¾Ý
+            if (familyName.equals("author")) { // authorï¿½ï¿½ï¿½ï¿½putï¿½ï¿½ï¿½ï¿½
                 for (int j = 0; j < column2.length; j++) {
                     put.add(Bytes.toBytes(familyName),
                             Bytes.toBytes(column2[j]), Bytes.toBytes(value2[j]));
@@ -92,16 +86,16 @@ public class Hbase {
     }
 
     /*
-     * ¸ù¾Ýrwokey²éÑ¯
+     * ï¿½ï¿½ï¿½ï¿½rwokeyï¿½ï¿½Ñ¯
      * 
      * @rowKey rowKey
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      */
     public static Result getResult(String tableName, String rowKey)
             throws IOException {
         Get get = new Get(Bytes.toBytes(rowKey));
-        HTable table = new HTable(conf, Bytes.toBytes(tableName));// »ñÈ¡±í
+        HTable table = new HTable(conf, Bytes.toBytes(tableName));// ï¿½ï¿½È¡ï¿½ï¿½
         Result result = table.get(get);
         for (KeyValue kv : result.list()) {
             System.out.println("family:" + Bytes.toString(kv.getFamily()));
@@ -115,9 +109,9 @@ public class Hbase {
     }
 
     /*
-     * ±éÀú²éÑ¯hbase±í
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯hbaseï¿½ï¿½
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      */
     public static void getResultScann(String tableName) throws IOException {
         Scan scan = new Scan();
@@ -145,12 +139,12 @@ public class Hbase {
     }
 
     /*
-     * ±éÀú²éÑ¯hbase±í
+     * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯hbaseï¿½ï¿½
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      */
     public static void getResultScann(String tableName, String start_rowkey,
-            String stop_rowkey) throws IOException {
+                                      String stop_rowkey) throws IOException {
         Scan scan = new Scan();
         scan.setStartRow(Bytes.toBytes(start_rowkey));
         scan.setStopRow(Bytes.toBytes(stop_rowkey));
@@ -178,17 +172,17 @@ public class Hbase {
     }
 
     /*
-     * ²éÑ¯±íÖÐµÄÄ³Ò»ÁÐ
+     * ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½Ðµï¿½Ä³Ò»ï¿½ï¿½
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      * 
      * @rowKey rowKey
      */
     public static void getResultByColumn(String tableName, String rowKey,
-            String familyName, String columnName) throws IOException {
+                                         String familyName, String columnName) throws IOException {
         HTable table = new HTable(conf, Bytes.toBytes(tableName));
         Get get = new Get(Bytes.toBytes(rowKey));
-        get.addColumn(Bytes.toBytes(familyName), Bytes.toBytes(columnName)); // »ñÈ¡Ö¸¶¨ÁÐ×åºÍÁÐÐÞÊÎ·û¶ÔÓ¦µÄÁÐ
+        get.addColumn(Bytes.toBytes(familyName), Bytes.toBytes(columnName)); // ï¿½ï¿½È¡Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î·ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½
         Result result = table.get(get);
         for (KeyValue kv : result.list()) {
             System.out.println("family:" + Bytes.toString(kv.getFamily()));
@@ -201,20 +195,20 @@ public class Hbase {
     }
 
     /*
-     * ¸üÐÂ±íÖÐµÄÄ³Ò»ÁÐ
+     * ï¿½ï¿½ï¿½Â±ï¿½ï¿½Ðµï¿½Ä³Ò»ï¿½ï¿½
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      * 
      * @rowKey rowKey
      * 
-     * @familyName ÁÐ×åÃû
+     * @familyName ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * 
-     * @columnName ÁÐÃû
+     * @columnName ï¿½ï¿½ï¿½ï¿½
      * 
-     * @value ¸üÐÂºóµÄÖµ
+     * @value ï¿½ï¿½ï¿½Âºï¿½ï¿½Öµ
      */
     public static void updateTable(String tableName, String rowKey,
-            String familyName, String columnName, String value)
+                                   String familyName, String columnName, String value)
             throws IOException {
         HTable table = new HTable(conf, Bytes.toBytes(tableName));
         Put put = new Put(Bytes.toBytes(rowKey));
@@ -225,18 +219,18 @@ public class Hbase {
     }
 
     /*
-     * ²éÑ¯Ä³ÁÐÊý¾ÝµÄ¶à¸ö°æ±¾
+     * ï¿½ï¿½Ñ¯Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ÝµÄ¶ï¿½ï¿½ï¿½æ±¾
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      * 
      * @rowKey rowKey
      * 
-     * @familyName ÁÐ×åÃû
+     * @familyName ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * 
-     * @columnName ÁÐÃû
+     * @columnName ï¿½ï¿½ï¿½ï¿½
      */
     public static void getResultByVersion(String tableName, String rowKey,
-            String familyName, String columnName) throws IOException {
+                                          String familyName, String columnName) throws IOException {
         HTable table = new HTable(conf, Bytes.toBytes(tableName));
         Get get = new Get(Bytes.toBytes(rowKey));
         get.addColumn(Bytes.toBytes(familyName), Bytes.toBytes(columnName));
@@ -258,18 +252,18 @@ public class Hbase {
     }
 
     /*
-     * É¾³ýÖ¸¶¨µÄÁÐ
+     * É¾ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      * 
      * @rowKey rowKey
      * 
-     * @familyName ÁÐ×åÃû
+     * @familyName ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * 
-     * @columnName ÁÐÃû
+     * @columnName ï¿½ï¿½ï¿½ï¿½
      */
     public static void deleteColumn(String tableName, String rowKey,
-            String falilyName, String columnName) throws IOException {
+                                    String falilyName, String columnName) throws IOException {
         HTable table = new HTable(conf, Bytes.toBytes(tableName));
         Delete deleteColumn = new Delete(Bytes.toBytes(rowKey));
         deleteColumn.deleteColumns(Bytes.toBytes(falilyName),
@@ -279,9 +273,9 @@ public class Hbase {
     }
 
     /*
-     * É¾³ýÖ¸¶¨µÄÁÐ
+     * É¾ï¿½ï¿½Ö¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      * 
      * @rowKey rowKey
      */
@@ -294,9 +288,9 @@ public class Hbase {
     }
 
     /*
-     * É¾³ý±í
+     * É¾ï¿½ï¿½ï¿½ï¿½
      * 
-     * @tableName ±íÃû
+     * @tableName ï¿½ï¿½ï¿½ï¿½
      */
     public static void deleteTable(String tableName) throws IOException {
         HBaseAdmin admin = new HBaseAdmin(conf);
@@ -307,50 +301,50 @@ public class Hbase {
 
     public static void main(String[] args) throws Exception {
 
-        // ´´½¨±í
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         String tableName = "blog2";
         // creatTable(tableName, family);
 
-        // Îª±íÌí¼ÓÊý¾Ý
+        // Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
-        String[] column1 = { "title", "content", "tag" };
+        String[] column1 = {"title", "content", "tag"};
         String[] value1 = {
                 "Head First HBase",
                 "HBase is the Hadoop database. Use it when you need random, realtime read/write access to your Big Data.",
-                "Hadoop,HBase,NoSQL" };
-        String[] column2 = { "name", "nickname" };
-        String[] value2 = { "nicholas", "lee" };
+                "Hadoop,HBase,NoSQL"};
+        String[] column2 = {"name", "nickname"};
+        String[] value2 = {"nicholas", "lee"};
         addData("rowkey1", "blog2", column1, value1, column2, value2);
         addData("rowkey2", "blog2", column1, value1, column2, value2);
         addData("rowkey3", "blog2", column1, value1, column2, value2);
 
-        // ±éÀú²éÑ¯
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯
         getResultScann("blog2", "rowkey4", "rowkey5");
-        // ¸ù¾Ýrow key·¶Î§±éÀú²éÑ¯
+        // ï¿½ï¿½ï¿½ï¿½row keyï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯
         getResultScann("blog2", "rowkey4", "rowkey5");
 
-        // ²éÑ¯
+        // ï¿½ï¿½Ñ¯
         getResult("blog2", "rowkey1");
 
-        // ²éÑ¯Ä³Ò»ÁÐµÄÖµ
+        // ï¿½ï¿½Ñ¯Ä³Ò»ï¿½Ðµï¿½Öµ
         getResultByColumn("blog2", "rowkey1", "author", "name");
 
-        // ¸üÐÂÁÐ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         updateTable("blog2", "rowkey1", "author", "name", "bin");
 
-        // ²éÑ¯Ä³Ò»ÁÐµÄÖµ
+        // ï¿½ï¿½Ñ¯Ä³Ò»ï¿½Ðµï¿½Öµ
         getResultByColumn("blog2", "rowkey1", "author", "name");
 
-        // ²éÑ¯Ä³ÁÐµÄ¶à°æ±¾
+        // ï¿½ï¿½Ñ¯Ä³ï¿½ÐµÄ¶ï¿½æ±¾
         getResultByVersion("blog2", "rowkey1", "author", "name");
 
-        // É¾³ýÒ»ÁÐ
+        // É¾ï¿½ï¿½Ò»ï¿½ï¿½
         deleteColumn("blog2", "rowkey1", "author", "nickname");
 
-        // É¾³ýËùÓÐÁÐ
+        // É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         deleteAllColumn("blog2", "rowkey1");
 
-        // É¾³ý±í
+        // É¾ï¿½ï¿½ï¿½ï¿½
         deleteTable("blog2");
 
     }

@@ -25,6 +25,10 @@ public class kafkaConsumer extends Thread {
         this.topic = topic;
     }
 
+    public static void main(String[] args) {
+        new kafkaConsumer("test").start();// 使用kafka集群中创建好的主题 test
+    }
+
     @Override
     public void run() {
         ConsumerConnector consumer = createConsumer();
@@ -45,9 +49,5 @@ public class kafkaConsumer extends Thread {
         properties.put("group.id", "group1");// 必须要使用别的组名称，
         // 如果生产者和消费者都在同一组，则不能访问同一组内的topic数据
         return Consumer.createJavaConsumerConnector(new ConsumerConfig(properties));
-    }
-
-    public static void main(String[] args) {
-        new kafkaConsumer("test").start();// 使用kafka集群中创建好的主题 test
     }
 }

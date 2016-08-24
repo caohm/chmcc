@@ -16,6 +16,10 @@ public class kafkaProducer extends Thread {
         this.topic = topic;
     }
 
+    public static void main(String[] args) {
+        new kafkaProducer("test").start(); // 使用kafka集群中创建好的主题 test
+    }
+
     @Override
     public void run() {
         Producer<Integer, String> producer = createProducer();
@@ -37,9 +41,5 @@ public class kafkaProducer extends Thread {
         properties.put("metadata.broker.list", "172.16.32.224:9092,172.16.32.224:9093,172.16.32.224:9094"); // 声明kafka
         // broker
         return new Producer<Integer, String>(new ProducerConfig(properties));
-    }
-
-    public static void main(String[] args) {
-        new kafkaProducer("test").start(); // 使用kafka集群中创建好的主题 test
     }
 }
