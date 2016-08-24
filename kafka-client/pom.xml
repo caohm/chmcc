@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.chmcc</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>chmcc-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>kafka-client</artifactId>
