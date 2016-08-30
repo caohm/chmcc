@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"
+	default-autowire="byName">
+	<!-- 配置信息 -->
+	<bean id="configService"
+		class="com.jd.order.purchase.config.client.xmlext.service.impl.XmlConfigServiceImpl">
+		<constructor-arg index="0">
+			<map>
+			</map>
+		</constructor-arg>
+		<constructor-arg index="1" ref="netService">
+		</constructor-arg>
+	</bean>
+	<bean id="netService"
+		class="com.jd.order.purchase.config.client.service.impl.NetServiceImpl" />
+
+    <bean id="oneKeyAutoDetectConfigService" class="com.auto.detect.service.config.impl.OneKeyAutoDetectConfigServiceImpl">
+        <property name="configService" ref="configService" />
+        <property name="configId" value="${OneKeyAutoDetectConfigServiceImpl.configId}"></property>
+    </bean>
+    
+    <bean id="nginxConfigService" class="com.auto.detect.service.config.impl.NginxConfigServiceImpl">
+        <property name="configService" ref="configService" />
+        <property name="configId" value="${NginxConfigServiceImpl.configId}"></property>
+    </bean>
+	<bean id="superAutoDetectConfigService" class="com.auto.detect.service.config.impl.SuperAutoDetectConfigServiceImpl">
+        <property name="configService" ref="configService" />
+    </bean>
+    
+    <bean id="autoDetectConfigService" class="com.auto.detect.service.config.impl.AutoDetectConfigServiceImpl">
+        <property name="oneKeyAutoDetectConfigService" ref="oneKeyAutoDetectConfigService" />
+        <property name="superAutoDetectConfigService" ref="superAutoDetectConfigService"></property>
+    </bean>
+    <bean id="autoDetectService" class="com.auto.detect.service.impl.AutoDetectServiceImpl">
+        <property name="autoDetectConfigService" ref="autoDetectConfigService" />
+        <property name="httpRpcService" ref="httpRpcService"></property>
+        <property name="nginxConfigService" ref="nginxConfigService"></property>
+    </bean>
+</beans>

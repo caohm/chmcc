@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+				        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+				        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+				        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+				        "
+	default-autowire="byName">
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	<context:component-scan base-package="com.jd.statistics" />
+	<context:component-scan base-package="com.auto.detect" />
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+			</map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+			</list>
+		</property>
+		<property name="ignoreAcceptHeader" value="true" />
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="mappingJacksonHttpMessageConverter" />
+			</list>
+		</property>
+	</bean>
+	<bean id="mappingJacksonHttpMessageConverter"
+		class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>application/json;charset=UTF-8</value>
+				<value>text/html;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/jsp/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:props/*.properties</value>
+			</list>
+		</property>
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"></property>
+	</bean>
+
+	<!-- one week -->
+	<bean id="paintUmpChartList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list value-type="UmpHighChart">
+				<bean id="rcatHighChart" class="UmpHighChart">
+					<property name="tpDivId" value="rcatTp" />
+					<property name="tpTitle" value="方法性能曲线图" />
+					<property name="invokeDivId" value="rcatInvoke" />
+					<property name="invokeTitle" value="方法调用次数曲线图" />
+					<property name="system" value="${rcat.system}" />
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="appController" class="AppController">
+		<property name="viewName" value="report" />
+		<property name="weekSize" value="${kpi.report.weekSize}" />
+		<property name="paintUmpChartList" ref="paintUmpChartList" />
+	</bean>
+	<!-- last 24 hours -->
+	<bean id="paint24HoursUmpChartList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list value-type="jd.gms.kpi.web.view.UmpHighChart">
+				<!-- RCAT -->
+				<bean id="rcatPackageA" class="UmpHighChart">
+					<property name="tpDivId" value="rcatPackageATp" />
+					<property name="tpTitle" value="添加购物车-方法性能曲线图" />
+					<property name="invokeDivId" value="rcatPackageAInvoke" />
+					<property name="invokeTitle" value="添加购物车-方法调用次数曲线图" />
+					<property name="umpKey"
+						value="cart_app_count.action.gate" />
+				</bean>
+				<bean id="rcatPackageB" class="UmpHighChart">
+					<property name="tpDivId" value="rcatPackageBTp" />
+					<property name="tpTitle" value="去结算-方法性能曲线图" />
+					<property name="invokeDivId" value="rcatPackageBInvoke" />
+					<property name="invokeTitle" value="去结算-方法调用次数曲线图" />
+					<property name="umpKey" value="cart_app_count.action.gotoOrder" />
+				</bean>
+				<bean id="rcatPackageC" class="UmpHighChart">
+					<property name="tpDivId" value="rcatPackageCTp" />
+					<property name="tpTitle" value="进入结算页-方法性能曲线图" />
+					<property name="invokeDivId" value="rcatPackageCInvoke" />
+					<property name="invokeTitle" value="进入结算页-方法调用次数曲线图" />
+					<property name="umpKey"
+						value="soporder_sdk_count.e.gco.B28.total" />
+				</bean>
+				<bean id="rcatTradeA" class="UmpHighChart">
+					<property name="tpDivId" value="rcatTradeATp" />
+					<property name="tpTitle" value="提交订单-方法性能曲线图" />
+					<property name="invokeDivId" value="rcatTradeAInvoke" />
+					<property name="invokeTitle" value="提交订单-方法调用次数曲线图" />
+					<property name="umpKey" value="soporder_sdk_count.submit.total.B28" />
+				</bean>				
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="view24hourKeyController" class="View24hourKeyController">
+        <property name="viewName" value="reportLast24H"/>
+        <property name="paintUmpChartList" ref="paint24HoursUmpChartList"/>
+    </bean>
+    
+    <bean id="realTimeKeyController" class="RealTimeKeyController">
+        <property name="viewName" value="realTime"/>
+        <property name="paintUmpChartList" ref="paintUmpChartList"/>
+    </bean>
+    
+    <bean id="painConvertCharList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list value-type="ConversionRateChart">
+				<bean id="gate2gotoOrder" class="ConversionRateChart">
+					<property name="system" value="${rcat.system}" />
+					<property name="name" value="添加购物车到去结算转化率"></property>
+					<property name="firstUmpKey" value="cart_app_count.action.gate"></property>
+					<property name="secondUmpKey" value="cart_app_count.action.gotoOrder"></property>
+				</bean>
+				<bean id="gotoOrder2eGco" class="ConversionRateChart">
+					<property name="system" value="${rcat.system}" />
+					<property name="name" value="去结算到进入结算页转化率"></property>
+					<property name="firstUmpKey" value="cart_app_count.action.gotoOrder"></property>
+					<property name="secondUmpKey" value="soporder_sdk_count.e.gco.B28.total"></property>
+				</bean>
+				<bean id="eGco2Submit" class="ConversionRateChart">
+					<property name="system" value="${rcat.system}" />
+					<property name="name" value="进入结算页到提交订单转化率"></property>
+					<property name="firstUmpKey" value="soporder_sdk_count.e.gco.B28.total"></property>
+					<property name="secondUmpKey" value="soporder_sdk_count.submit.total.B28"></property>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="viewMinuteController" class="ViewMinuteController">
+        <property name="viewName" value="convert"/>
+        <property name="paintUmpChartList" ref="paintConvertUmpChartList"/>
+        <property name="painConvertCharList" ref="painConvertCharList"></property>
+    </bean>
+
+	<bean id="paintConvertUmpChartList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list value-type="UmpHighChart">
+				<bean id="containConvertHighChart" class="UmpHighChart">
+					<property name="tpDivId" value="rcatTp" />
+					<property name="tpTitle" value="方法性能曲线图" />
+					<property name="invokeDivId" value="rcatInvoke" />
+					<property name="invokeTitle" value="方法调用次数曲线图" />
+					<property name="convertDivId" value="rcatConvert" />
+					<property name="convertTitle" value="转化率曲线图" />
+					<property name="yesterdayConvertDivId" value="yesterdayRcatConvert" />
+					<property name="yesterdayConvertTitle" value="昨天转化率曲线图" />
+					<property name="system" value="${rcat.system}" />
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

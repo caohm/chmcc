@@ -1,30 +1,37 @@
 package org.chmcc.hbase;
 
+import java.io.IOException;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
 import org.apache.hadoop.hbase.HTableDescriptor;
 import org.apache.hadoop.hbase.KeyValue;
-import org.apache.hadoop.hbase.client.*;
+import org.apache.hadoop.hbase.client.Delete;
+import org.apache.hadoop.hbase.client.Get;
+import org.apache.hadoop.hbase.client.HBaseAdmin;
+import org.apache.hadoop.hbase.client.HTable;
+import org.apache.hadoop.hbase.client.HTablePool;
+import org.apache.hadoop.hbase.client.Put;
+import org.apache.hadoop.hbase.client.Result;
+import org.apache.hadoop.hbase.client.ResultScanner;
+import org.apache.hadoop.hbase.client.Scan;
 import org.apache.hadoop.hbase.util.Bytes;
 
-import java.io.IOException;
-
 public class Hbase {
-    // ������̬����
+    // 声明静态配置
     static Configuration conf = null;
-
     static {
         conf = HBaseConfiguration.create();
-        conf.set("hbase.zookeeper.quorum", "192.168.213.130");
+        conf.set("hbase.zookeeper.quorum", "localhost");
     }
 
     /*
-     * ������
+     * 创建表
      * 
-     * @tableName ����
+     * @tableName 表名
      * 
-     * @family �����б�
+     * @family 列族列表
      */
     public static void creatTable(String tableName, String[] family)
             throws Exception {
@@ -43,38 +50,38 @@ public class Hbase {
     }
 
     /*
-     * Ϊ��������ݣ��ʺ�֪���ж�������Ĺ̶���
+     * 为表添加数据（适合知道有多少列族的固定表）
      * 
      * @rowKey rowKey
      * 
-     * @tableName ����
+     * @tableName 表名
      * 
-     * @column1 ��һ�������б�
+     * @column1 第一个列族列表
      * 
-     * @value1 ��һ���е�ֵ���б�
+     * @value1 第一个列的值的列表
      * 
-     * @column2 �ڶ��������б�
+     * @column2 第二个列族列表
      * 
-     * @value2 �ڶ����е�ֵ���б�
+     * @value2 第二个列的值的列表
      */
     public static void addData(String rowKey, String tableName,
-                               String[] column1, String[] value1, String[] column2, String[] value2)
+            String[] column1, String[] value1, String[] column2, String[] value2)
             throws IOException {
-        Put put = new Put(Bytes.toBytes(rowKey));// ����rowkey
-        HTable table = new HTable(conf, Bytes.toBytes(tableName));// HTabel�������¼��صĲ�������ɾ�Ĳ��//
-        // ��ȡ��
-        HColumnDescriptor[] columnFamilies = table.getTableDescriptor() // ��ȡ���е�����
+        Put put = new Put(Bytes.toBytes(rowKey));// 设置rowkey
+        HTable table = new HTable(conf, Bytes.toBytes(tableName));// HTabel负责跟记录相关的操作如增删改查等//
+                                                                    // 获取表
+        HColumnDescriptor[] columnFamilies = table.getTableDescriptor() // 获取所有的列族
                 .getColumnFamilies();
 
         for (int i = 0; i < columnFamilies.length; i++) {
-            String familyName = columnFamilies[i].getNameAsString(); // ��ȡ������
-            if (familyName.equals("article")) { // article����put����
+            String familyName = columnFamilies[i].getNameAsString(); // 获取列族名
+            if (familyName.equals("article")) { // article列族put数据
                 for (int j = 0; j < column1.length; j++) {
                     put.add(Bytes.toBytes(familyName),
                             Bytes.toBytes(column1[j]), Bytes.toBytes(value1[j]));
                 }
             }
-            if (familyName.equals("author")) { // author����put����
+            if (familyName.equals("author")) { // author列族put数据
                 for (int j = 0; j < column2.length; j++) {
                     put.add(Bytes.toBytes(familyName),
                             Bytes.toBytes(column2[j]), Bytes.toBytes(value2[j]));
@@ -86,16 +93,16 @@ public class Hbase {
     }
 
     /*
-     * ����rwokey��ѯ
+     * 根据rwokey查询
      * 
      * @rowKey rowKey
      * 
-     * @tableName ����
+     * @tableName 表名
      */
     public static Result getResult(String tableName, String rowKey)
             throws IOException {
         Get get = new Get(Bytes.toBytes(rowKey));
-        HTable table = new HTable(conf, Bytes.toBytes(tableName));// ��ȡ��
+        HTable table = new HTable(conf, Bytes.toBytes(tableName));// 获取表
         Result result = table.get(get);
         for (KeyValue kv : result.list()) {
             System.out.println("family:" + Bytes.toString(kv.getFamily()));
@@ -109,9 +116,9 @@ public class Hbase {
     }
 
     /*
-     * ������ѯhbase��
+     * 遍历查询hbase表
      * 
-     * @tableName ����
+     * @tableName 表名
      */
     public static void getResultScann(String tableName) throws IOException {
         Scan scan = new Scan();
@@ -139,12 +146,12 @@ public class Hbase {
     }
 
     /*
-     * ������ѯhbase��
+     * 遍历查询hbase表
      * 
-     * @tableName ����
+     * @tableName 表名
      */
     public static void getResultScann(String tableName, String start_rowkey,
-                                      String stop_rowkey) throws IOException {
+            String stop_rowkey) throws IOException {
         Scan scan = new Scan();
         scan.setStartRow(Bytes.toBytes(start_rowkey));
         scan.setStopRow(Bytes.toBytes(stop_rowkey));
@@ -172,17 +179,17 @@ public class Hbase {
     }
 
     /*
-     * ��ѯ���е�ĳһ��
+     * 查询表中的某一列
      * 
-     * @tableName ����
+     * @tableName 表名
      * 
      * @rowKey rowKey
      */
     public static void getResultByColumn(String tableName, String rowKey,
-                                         String familyName, String columnName) throws IOException {
+            String familyName, String columnName) throws IOException {
         HTable table = new HTable(conf, Bytes.toBytes(tableName));
         Get get = new Get(Bytes.toBytes(rowKey));
-        get.addColumn(Bytes.toBytes(familyName), Bytes.toBytes(columnName)); // ��ȡָ������������η���Ӧ����
+        get.addColumn(Bytes.toBytes(familyName), Bytes.toBytes(columnName)); // 获取指定列族和列修饰符对应的列
         Result result = table.get(get);
         for (KeyValue kv : result.list()) {
             System.out.println("family:" + Bytes.toString(kv.getFamily()));
@@ -195,20 +202,20 @@ public class Hbase {
     }
 
     /*
-     * ���±��е�ĳһ��
+     * 更新表中的某一列
      * 
-     * @tableName ����
+     * @tableName 表名
      * 
      * @rowKey rowKey
      * 
-     * @familyName ������
+     * @familyName 列族名
      * 
-     * @columnName ����
+     * @columnName 列名
      * 
-     * @value ���º��ֵ
+     * @value 更新后的值
      */
     public static void updateTable(String tableName, String rowKey,
-                                   String familyName, String columnName, String value)
+            String familyName, String columnName, String value)
             throws IOException {
         HTable table = new HTable(conf, Bytes.toBytes(tableName));
         Put put = new Put(Bytes.toBytes(rowKey));
@@ -219,18 +226,18 @@ public class Hbase {
     }
 
     /*
-     * ��ѯĳ�����ݵĶ���汾
+     * 查询某列数据的多个版本
      * 
-     * @tableName ����
+     * @tableName 表名
      * 
      * @rowKey rowKey
      * 
-     * @familyName ������
+     * @familyName 列族名
      * 
-     * @columnName ����
+     * @columnName 列名
      */
     public static void getResultByVersion(String tableName, String rowKey,
-                                          String familyName, String columnName) throws IOException {
+            String familyName, String columnName) throws IOException {
         HTable table = new HTable(conf, Bytes.toBytes(tableName));
         Get get = new Get(Bytes.toBytes(rowKey));
         get.addColumn(Bytes.toBytes(familyName), Bytes.toBytes(columnName));
@@ -252,18 +259,18 @@ public class Hbase {
     }
 
     /*
-     * ɾ��ָ������
+     * 删除指定的列
      * 
-     * @tableName ����
+     * @tableName 表名
      * 
      * @rowKey rowKey
      * 
-     * @familyName ������
+     * @familyName 列族名
      * 
-     * @columnName ����
+     * @columnName 列名
      */
     public static void deleteColumn(String tableName, String rowKey,
-                                    String falilyName, String columnName) throws IOException {
+            String falilyName, String columnName) throws IOException {
         HTable table = new HTable(conf, Bytes.toBytes(tableName));
         Delete deleteColumn = new Delete(Bytes.toBytes(rowKey));
         deleteColumn.deleteColumns(Bytes.toBytes(falilyName),
@@ -273,9 +280,9 @@ public class Hbase {
     }
 
     /*
-     * ɾ��ָ������
+     * 删除指定的列
      * 
-     * @tableName ����
+     * @tableName 表名
      * 
      * @rowKey rowKey
      */
@@ -288,9 +295,9 @@ public class Hbase {
     }
 
     /*
-     * ɾ����
+     * 删除表
      * 
-     * @tableName ����
+     * @tableName 表名
      */
     public static void deleteTable(String tableName) throws IOException {
         HBaseAdmin admin = new HBaseAdmin(conf);
@@ -301,50 +308,51 @@ public class Hbase {
 
     public static void main(String[] args) throws Exception {
 
-        // ������
+        // 创建表
         String tableName = "blog2";
+        String[] family = { "article", "author" };
         // creatTable(tableName, family);
 
-        // Ϊ���������
+        // 为表添加数据
 
-        String[] column1 = {"title", "content", "tag"};
+        String[] column1 = { "title", "content", "tag" };
         String[] value1 = {
                 "Head First HBase",
                 "HBase is the Hadoop database. Use it when you need random, realtime read/write access to your Big Data.",
-                "Hadoop,HBase,NoSQL"};
-        String[] column2 = {"name", "nickname"};
-        String[] value2 = {"nicholas", "lee"};
+                "Hadoop,HBase,NoSQL" };
+        String[] column2 = { "name", "nickname" };
+        String[] value2 = { "nicholas", "lee" };
         addData("rowkey1", "blog2", column1, value1, column2, value2);
         addData("rowkey2", "blog2", column1, value1, column2, value2);
         addData("rowkey3", "blog2", column1, value1, column2, value2);
 
-        // ������ѯ
+        // 遍历查询
         getResultScann("blog2", "rowkey4", "rowkey5");
-        // ����row key��Χ������ѯ
+        // 根据row key范围遍历查询
         getResultScann("blog2", "rowkey4", "rowkey5");
 
-        // ��ѯ
+        // 查询
         getResult("blog2", "rowkey1");
 
-        // ��ѯĳһ�е�ֵ
+        // 查询某一列的值
         getResultByColumn("blog2", "rowkey1", "author", "name");
 
-        // ������
+        // 更新列
         updateTable("blog2", "rowkey1", "author", "name", "bin");
 
-        // ��ѯĳһ�е�ֵ
+        // 查询某一列的值
         getResultByColumn("blog2", "rowkey1", "author", "name");
 
-        // ��ѯĳ�еĶ�汾
+        // 查询某列的多版本
         getResultByVersion("blog2", "rowkey1", "author", "name");
 
-        // ɾ��һ��
+        // 删除一列
         deleteColumn("blog2", "rowkey1", "author", "nickname");
 
-        // ɾ��������
+        // 删除所有列
         deleteAllColumn("blog2", "rowkey1");
 
-        // ɾ����
+        // 删除表
         deleteTable("blog2");
 
     }

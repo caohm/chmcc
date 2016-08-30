@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
-
+    <!-- 测试环境，需绑host -->
+    <property>
+        <name>hbase.zookeeper.quorum</name>
+        <value>192.168.99.100:32814</value>
+    </property>
     <property>
         <name>hbase.rootdir</name>
         <value>file:///home/bigfish/myhbase1/</value>

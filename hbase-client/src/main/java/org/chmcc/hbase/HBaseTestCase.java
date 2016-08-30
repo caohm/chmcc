@@ -1,17 +1,7 @@
 package org.chmcc.hbase;
 
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.hbase.HBaseConfiguration;
-import org.apache.hadoop.hbase.HColumnDescriptor;
-import org.apache.hadoop.hbase.HTableDescriptor;
-import org.apache.hadoop.hbase.client.Get;
-import org.apache.hadoop.hbase.client.HBaseAdmin;
-import org.apache.hadoop.hbase.client.HTable;
-import org.apache.hadoop.hbase.client.Put;
-import org.apache.hadoop.hbase.client.Result;
-import org.apache.hadoop.hbase.client.ResultScanner;
-import org.apache.hadoop.hbase.client.Scan;
-import org.apache.hadoop.hbase.util.Bytes;
+
 
 import java.io.IOException;
 
@@ -19,6 +9,28 @@ import java.io.IOException;
 public class HBaseTestCase {
     //声明静态配置 HBaseConfiguration  
     static Configuration cfg = HBaseConfiguration.create();
+    static Configuration configuration;
+
+    static {
+        cfg.clear();
+        cfg.setInt("timeout", 12000);
+        cfg.set("zookeeper.znode.parent", "/hbase");
+        cfg.set("hbase.zookeeper.quorum", "192.168.99.100");
+        cfg.set("hbase.zookeeper.property.clientPort", "2181");
+        cfg.set("hbase.master", "192.168.99.100:60010");
+
+        configuration = HBaseConfiguration.create(cfg);
+
+
+        try {
+            HBaseAdmin.checkHBaseAvailable(configuration);
+        } catch (MasterNotRunningException e) {
+            e.printStackTrace();
+        } catch (ZooKeeperConnectionException e) {
+            e.printStackTrace();
+        }
+
+    }
 
     //创建一张表，通过HBaseAdmin HTableDescriptor来创建  
     public static void creat(String tablename, String columnFamily) throws Exception {
