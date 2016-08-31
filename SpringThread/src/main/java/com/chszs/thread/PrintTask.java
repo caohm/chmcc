@@ -26,7 +26,7 @@ public class PrintTask implements Runnable {
         while (true) {
             Map map = (Map) queue.poll();
             System.out.println("offset" + map.get("offset"));
-            while (DateUtil.isDawn(9000)) {
+            while (DateUtil.isDawn(5000)) {
                 map.put("offset", 0);
                 System.out.println("-------------------------------------------------------------------" + map.get("offset"));
                 queue.offer(map);
