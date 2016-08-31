@@ -12,9 +12,10 @@
     <modules>
         <module>kafka-client</module>
         <module>hbase-client</module>
-        <module>elasticsearch</module>
+        <!--<module>elasticsearch</module>-->
         <module>patch-tools</module>
         <module>TimingTask</module>
+        <module>Bootstrap</module>
     </modules>
 
     <build>

@@ -79,13 +79,6 @@
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase</artifactId>
             <version>0.94.5</version>
-            <classifier>security</classifier>
-            <exclusions>
-                <exclusion>
-                    <groupId>*</groupId>
-                    <artifactId>*</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.google.protobuf</groupId>
