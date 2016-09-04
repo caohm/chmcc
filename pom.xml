@@ -10,22 +10,16 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>kafka-client</module>
-        <module>hbase-client</module>
-<<<<<<< HEAD
-        <!--<module>elasticsearch</module>-->
-        <module>patch-tools</module>
-        <module>TimingTask</module>
         <module>Bootstrap</module>
-=======
-        <module>redis-client</module>
-        <module>elasticsearch</module>
-        <module>patch-tools</module>
-        <module>TimingTask</module>
-        <module>SpringThread</module>
         <module>date</module>
+        <module>elasticsearch</module>
+        <module>hbase-client</module>
         <module>jd-springmvc-web</module>
->>>>>>> da189e117f3ddf52fac6dea61bbf23abf85e8891
+        <module>kafka-client</module>
+        <module>patch-tools</module>
+        <module>redis-client</module>
+        <module>SpringThread</module>
+        <module>TimingTask</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
