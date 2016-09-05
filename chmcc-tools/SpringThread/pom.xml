@@ -1,0 +1,17 @@
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.chmcc.tools</groupId>
+        <artifactId>chmcc-tools-root</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>SpringThread</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <dependencies>
+    </dependencies>
+    <build>
+        <plugins>
+        </plugins>
+    </build>
+</project>
