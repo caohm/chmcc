@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>    
-<ehcache name="spring-ehcache" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
-xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">  
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="spring-ehcache"
+         xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
 
     <diskStore path="java.io.spring.ecache"/>
 
     <!-- 登录记录缓存 锁定10分钟 -->
     <cache name="username"
-          
+
            eternal="false"
            timeToIdleSeconds="3600"
            timeToLiveSeconds="0"
@@ -15,7 +15,7 @@ xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
     </cache>
 
     <cache name="roles"
-         
+
            eternal="false"
            timeToIdleSeconds="3600"
            timeToLiveSeconds="0"
@@ -24,7 +24,7 @@ xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
     </cache>
 
     <cache name="permissions"
-        
+
            eternal="false"
            timeToIdleSeconds="3600"
            timeToLiveSeconds="0"
@@ -33,7 +33,7 @@ xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
     </cache>
 
     <cache name="active"
-          
+
            eternal="false"
            timeToIdleSeconds="3600"
            timeToLiveSeconds="0"

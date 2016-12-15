@@ -24,6 +24,16 @@ public class PasswordHelper {
     @Value("2")
     private int hashIterations = 2;
 
+    public static void main(String args[]) {
+
+        PasswordHelper helper = new PasswordHelper();
+        String npd = helper.encryptPassword("123", "b429331aa3b95e710bc0f5a766b1a920");
+        User user = new User("admin", "123456");
+        helper.encryptPassword(user);
+
+        System.out.println(JSON.toJSONString(user));
+    }
+
     public void setRandomNumberGenerator(RandomNumberGenerator randomNumberGenerator) {
         this.randomNumberGenerator = randomNumberGenerator;
     }
@@ -38,31 +48,29 @@ public class PasswordHelper {
 
     public String encryptPassword(String password) {
 
-        String salt = randomNumberGenerator.nextBytes().toHex() ;
+        String salt = randomNumberGenerator.nextBytes().toHex();
 
         String newPassword = new SimpleHash(
                 algorithmName,
-                password ,
-                salt ,
+                password,
+                salt,
                 hashIterations).toHex();
 
         return newPassword;
     }
-    
-    public String encryptPassword(String password , String salt) {
 
-      
+    public String encryptPassword(String password, String salt) {
+
+
         String newPassword = new SimpleHash(
                 algorithmName,
-                password ,
-                salt ,
+                password,
+                salt,
                 hashIterations).toHex();
 
         return newPassword;
     }
-    
-    
-    
+
     public void encryptPassword(User user) {
 
         user.setSalt(randomNumberGenerator.nextBytes().toHex());
@@ -74,15 +82,5 @@ public class PasswordHelper {
                 hashIterations).toHex();
 
         user.setPassword(newPassword);
-    }
-    
-    public static void main(String args[]){
-    	
-    	PasswordHelper helper  = new PasswordHelper();
-    	String npd = helper.encryptPassword("123", "b429331aa3b95e710bc0f5a766b1a920");
-        User user = new User("admin","123456");
-        helper.encryptPassword(user);
-
-        System.out.println(JSON.toJSONString(user));
     }
 }

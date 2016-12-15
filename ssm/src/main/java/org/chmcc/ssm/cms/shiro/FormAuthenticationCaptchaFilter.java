@@ -29,7 +29,7 @@ public class FormAuthenticationCaptchaFilter extends FormAuthenticationFilter {
 
     }
 
-    protected AuthenticationToken createToken( ServletRequest request, ServletResponse response) {
+    protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) {
 
         String username = getUsername(request);
 

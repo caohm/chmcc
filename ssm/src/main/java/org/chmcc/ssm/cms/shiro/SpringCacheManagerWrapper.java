@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2005-2012 https://github.com/zhangkaitao
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  */
 package org.chmcc.ssm.cms.shiro;
@@ -12,7 +12,12 @@ import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.util.CollectionUtils;
 import org.springframework.cache.support.SimpleValueWrapper;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * 包装Spring cache抽象
@@ -74,7 +79,7 @@ public class SpringCacheManagerWrapper implements CacheManager {
 
         @Override
         public int size() {
-            if(springCache.getNativeCache() instanceof Ehcache) {
+            if (springCache.getNativeCache() instanceof Ehcache) {
                 Ehcache ehcache = (Ehcache) springCache.getNativeCache();
                 return ehcache.getSize();
             }
@@ -83,7 +88,7 @@ public class SpringCacheManagerWrapper implements CacheManager {
 
         @Override
         public Set keys() {
-            if(springCache.getNativeCache() instanceof Ehcache) {
+            if (springCache.getNativeCache() instanceof Ehcache) {
                 Ehcache ehcache = (Ehcache) springCache.getNativeCache();
                 return new HashSet(ehcache.getKeys());
             }
@@ -92,7 +97,7 @@ public class SpringCacheManagerWrapper implements CacheManager {
 
         @Override
         public Collection values() {
-            if(springCache.getNativeCache() instanceof Ehcache) {
+            if (springCache.getNativeCache() instanceof Ehcache) {
                 Ehcache ehcache = (Ehcache) springCache.getNativeCache();
                 List keys = ehcache.getKeys();
                 if (!CollectionUtils.isEmpty(keys)) {
