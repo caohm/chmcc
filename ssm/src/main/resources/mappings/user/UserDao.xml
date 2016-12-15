@@ -3,12 +3,12 @@
 <mapper namespace="org.chmcc.ssm.cms.dao.UserDao">
     <resultMap type="org.chmcc.ssm.cms.model.User" id="User">
         <id column="Id" property="id" jdbcType="BIGINT"></id>
-        <id column="organization_id" property="organizationId" jdbcType="BIGINT"></id>
-        <id column="username" property="username" jdbcType="VARCHAR"></id>
-        <id column="password" property="password" jdbcType="VARCHAR"></id>
-        <id column="salt" property="salt" jdbcType="VARCHAR"></id>
-        <id column="role_ids" property="roleIds" jdbcType="VARCHAR"></id>
-        <id column="locked" property="locked" jdbcType="TINYINT"></id>
+        <result column="organization_id" property="organizationId" jdbcType="BIGINT"></result>
+        <result column="username" property="username" jdbcType="VARCHAR"></result>
+        <result column="password" property="password" jdbcType="VARCHAR"></result>
+        <result column="salt" property="salt" jdbcType="VARCHAR"></result>
+        <result column="role_ids" property="roleIds" jdbcType="VARCHAR"></result>
+        <result column="locked" property="locked" jdbcType="TINYINT"></result>
     </resultMap>
     <sql id="validFields">
         Id,organization_id,username,password,salt,role_ids,locked

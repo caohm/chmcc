@@ -78,7 +78,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="typeAliasesPackage" value="org.chmcc.ssm.cms.model"/>
         <property name="mapperLocations" value="classpath:/mappings/**/*.xml"/>
-        <property name="configLocation" value="classpath:PageConfig.xml"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
 
     <!-- 扫描basePackage下所有以@MyBatisDao注解的接口 -->
