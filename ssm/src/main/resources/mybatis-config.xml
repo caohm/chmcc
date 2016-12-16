@@ -57,8 +57,8 @@
             <!--</dataSource>-->
         <!--</environment>-->
     <!--</environments>-->
-    <mappers>
-        <!--<package name="org.mybatis.builder"/>-->
-            <mapper resource="classpath:/mappings/**/*.xml"/>
-    </mappers>
+    <!--<mappers>-->
+        <!--&lt;!&ndash;<package name="org.mybatis.builder"/>&ndash;&gt;-->
+            <!--<mapper resource="classpath:/mappings/**/*.xml"/>-->
+    <!--</mappers>-->
 </configuration>
