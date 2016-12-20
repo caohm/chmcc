@@ -3,6 +3,7 @@ package org.chmcc.ssm.cms.controller;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
+import org.chmcc.ssm.cms.SystemControllerLog;
 import org.chmcc.ssm.cms.model.User;
 import org.chmcc.ssm.cms.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/save")
+    @SystemControllerLog(description = "save")
     public String saveUser(User user) {
 
         userService.addUser(user);
@@ -30,6 +32,7 @@ public class UserController {
     }
 
     @RequestMapping("/list")
+    @SystemControllerLog(description = "list")
     @ResponseBody
     public User listUsers(String username) {
         User user = userService.getUserByUsername(username);
@@ -37,6 +40,7 @@ public class UserController {
     }
 
     @RequestMapping("/lists")
+    @SystemControllerLog(description = "lists")
     @ResponseBody
     public List<User> listAllUsers() {
         List<User> users = userService.getAllUsers();
@@ -51,17 +55,20 @@ public class UserController {
      * @return
      */
     @RequestMapping("/page")
+    @SystemControllerLog(description = "page")
     @ResponseBody
     public List<User> listAllUsers(int pageSize, int currentPage) {
         List<User> users = userService.getUsersByPage(currentPage, pageSize);
         return users;
     }
 
+    @SystemControllerLog(description = "login")
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String toLoginPage() {
         return "user/login";
     }
 
+    @SystemControllerLog(description = "center")
     @RequestMapping(value = "/center")
     public String loginSuccess(HttpServletRequest req, Model model) {
         String username = (String) SecurityUtils.getSubject().getPrincipal();
@@ -77,6 +84,7 @@ public class UserController {
      * @param model
      * @return
      */
+    @SystemControllerLog(description = "login")
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ModelAndView showLoginForm(HttpServletRequest req, Model model) {
         ModelAndView mv = new ModelAndView("user/login");
