@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface UserService {
 
-    public List<User> getAllUsers();
+    List<User> getAllUsers();
 
-    public User getUserByUsername(String username);
+    User getUserByUsername(String username);
 
-    public void addUser(User user);
+    void addUser(User user);
 
-    public List<User> getUsersByPage(int pageSize, int currentPage);
+    List<User> getUsersByPage(int pageSize, int currentPage);
 }

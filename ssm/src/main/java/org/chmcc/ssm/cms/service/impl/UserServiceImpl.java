@@ -2,6 +2,7 @@ package org.chmcc.ssm.cms.service.impl;
 
 import com.github.miemiedev.mybatis.paginator.domain.Order;
 import com.github.miemiedev.mybatis.paginator.domain.PageBounds;
+import org.chmcc.ssm.cms.SystemServiceLog;
 import org.chmcc.ssm.cms.dao.UserDao;
 import org.chmcc.ssm.cms.model.User;
 import org.chmcc.ssm.cms.service.UserService;
@@ -19,14 +20,12 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
     private PasswordHelper passwordHelper;
 
-    @Override
-
+    @SystemServiceLog(description = "查询用户")
     @Cacheable(value = "username", key = "#username")
     public User getUserByUsername(String username) {
         return userDao.getUserByUsername(username);
     }
 
-    @Override
     public void addUser(User user) {
         // TODO Auto-generated method stub
         passwordHelper.encryptPassword(user);
@@ -37,7 +36,6 @@ public class UserServiceImpl implements UserService {
         return userDao.getAllUsers(null);
     }
 
-    @Override
     public List<User> getUsersByPage(int currentPage, int pageSize) {
         String sort = "username.desc";
         PageBounds bounds = new PageBounds(currentPage, pageSize, Order.formString(sort));
