@@ -114,9 +114,9 @@
                 /resources/** = anon      <!--anon 不需要有登陆权限才可以访问的资源 -->
                 /index.jsp = anon         <!--anon 不需要有登陆权限才可以访问的资源 -->
                 /unauthorized.jsp = authc <!--authc 需要有登陆权限才可以访问的资源，如果没有就跳转到loginUrl -->
-                /test/index = authc
-                /user/login =authc
-                /user/index =authc
+                /test/** = anon
+                /user/** =authc
+                /user/** =authc
                 /logout = logout
             </value>
         </property>

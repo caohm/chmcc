@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <aop:config>
+        <aop:aspect id="interfaceAspect" ref="adviceUtils">
+            <aop:pointcut id="interfaceAop" expression="execution(* org.chmcc.ssm.cms.interfaces..*.*(..))"/>
+            <aop:around pointcut-ref="interfaceAop" method="doInterfaceAround"/>
+        </aop:aspect>
+        <aop:aspect id="serviceAspect" ref="adviceUtils">
+            <aop:pointcut id="serviceAop" expression="execution(* org.chmcc.ssm.cms.service..*.*(..))"/>
+            <aop:around pointcut-ref="serviceAop" method="doServiceAround"/>
+        </aop:aspect>
+        <aop:aspect id="daoAspect" ref="adviceUtils">
+            <aop:pointcut id="daoAop" expression="execution(* org.chmcc.ssm.cms.dao..*.*(..)) "/>
+            <aop:around pointcut-ref="daoAop" method="doDaoAround"/>
+        </aop:aspect>
+    </aop:config>
+    <bean id="adviceUtils" class="org.chmcc.ssm.cms.aop.AdviceUtils"/>
+</beans>

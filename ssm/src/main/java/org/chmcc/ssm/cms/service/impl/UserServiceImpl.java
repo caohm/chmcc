@@ -23,7 +23,6 @@ public class UserServiceImpl implements UserService {
 
     @Cacheable(value = "username", key = "#username")
     public User getUserByUsername(String username) {
-        System.out.println("---- --" + username + "---- --");
         return userDao.getUserByUsername(username);
     }
 

@@ -7,27 +7,27 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
-
-    <login-config>
-        <!-- Authorization setting for SSL -->
-        <auth-method>CLIENT-CERT</auth-method>
-        <realm-name>Client Cert Users-only Area</realm-name>
-    </login-config>
-    <security-constraint>
-        <!-- Authorization setting for SSL -->
-        <web-resource-collection>
-            <web-resource-name>SSL</web-resource-name>
-            <url-pattern>/user/*</url-pattern>
-        </web-resource-collection>
-        <user-data-constraint>
-            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-        </user-data-constraint>
-    </security-constraint>
+    <!--
+        <login-config>
+            &lt;!&ndash; Authorization setting for SSL &ndash;&gt;
+            <auth-method>CLIENT-CERT</auth-method>
+            <realm-name>Client Cert Users-only Area</realm-name>
+        </login-config>
+        <security-constraint>
+            &lt;!&ndash; Authorization setting for SSL &ndash;&gt;
+            <web-resource-collection>
+                <web-resource-name>SSL</web-resource-name>
+                <url-pattern>/user/*</url-pattern>
+            </web-resource-collection>
+            <user-data-constraint>
+                <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+            </user-data-constraint>
+        </security-constraint>-->
 
     <!-- 加载所有的配置文件 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:ssm-spring-*.xml</param-value>
+        <param-value>classpath:spring-content.xml</param-value>
     </context-param>
 
     <!-- 配置Spring监听 -->
