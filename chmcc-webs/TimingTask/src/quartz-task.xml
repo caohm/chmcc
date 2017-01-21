@@ -10,5 +10,5 @@
         </property>
     </bean>
     <!--加载数据库任务-->
-    <bean id="loadTask" class="org.hmcc.timingtask.task.util.LoadTask" init-method="loadTask"/>
+    <bean id="loadTask" class="org.chmcc.timingtask.task.util.LoadTask" init-method="loadTask"/>
 </beans>
