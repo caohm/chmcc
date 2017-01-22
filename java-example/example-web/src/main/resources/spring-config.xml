@@ -13,7 +13,7 @@
 		</property>
 	</bean>
 
-    <bean id="timeHandler" class="com.jd.common.aop.TimeHandler"/>
+    <bean id="timeHandler" class="org.chmcc.common.aop.TimeHandler"/>
     <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">
             <list>

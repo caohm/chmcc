@@ -1,5 +1,5 @@
-module com {
-    module jd {
+module org {
+    module chmcc {
         module helloworld {
             module rpc {
                 module example {

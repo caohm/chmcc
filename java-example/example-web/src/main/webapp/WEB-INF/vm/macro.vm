@@ -1,32 +1,32 @@
-#* @vtlvariable name="module" type="com.jd.common.web.url.JdUrl" *#
-#* @vtlvariable name="page" type="com.jd.common.util.base.PaginatedArrayList" *#
+#* @vtlvariable name="module" type="org.chmcc.common.web.url.JdUrl" *#
+#* @vtlvariable name="page" type="org.chmcc.common.util.base.PaginatedArrayList" *#
 
 #macro (showPage $module $page)
     #if($page)
-    #set($pagePos = 2) ##µ±Ç°Ò³µÄÎ²°Í³¤¶È
-    ×Ü$!{page.totalItem}Ìõ¼ÇÂ¼¡£
-    #if($page.previousPageAvailable) ##Èç¹ûÄÜÏòÉÏ·­Ò³
-    <a href="$module.addQueryData("page",$!{page.previousPage}).render()">ÉÏÒ»Ò³</a>
+    #set($pagePos = 2) ##ï¿½ï¿½Ç°Ò³ï¿½ï¿½Î²ï¿½Í³ï¿½ï¿½ï¿½
+    ï¿½ï¿½$!{page.totalItem}ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½
+    #if($page.previousPageAvailable) ##ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½Ò³
+    <a href="$module.addQueryData("page",$!{page.previousPage}).render()">ï¿½ï¿½Ò»Ò³</a>
     <a href="$module.addQueryData("page",1).render()">1</a>
     #end
-    #if($!page.index>$pagePos+2) .. #end ##ÏÔÊ¾Ç°ÃæµÄÊ¡ÂÔºÅ
-    #foreach($i in [$pagePos..1]) ##Ôö¼ÓÇ°ÃæµÄÎ²°Í
+    #if($!page.index>$pagePos+2) .. #end ##ï¿½ï¿½Ê¾Ç°ï¿½ï¿½ï¿½Ê¡ï¿½Ôºï¿½
+    #foreach($i in [$pagePos..1]) ##ï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Î²ï¿½ï¿½
         #if($!page.index - $i > 1)
             #set($pageIndex= $!page.index - $i)
         <a href="$module.addQueryData("page",$pageIndex).render()">$pageIndex</a>
         #end
     #end
-    <span>$!page.index</span> ##ÏÔÊ¾µ±Ç°Ò³ºÅ
-    #foreach($i in [1..$pagePos]) ##Ôö¼ÓºóÃæµÄÎ²°Í
+    <span>$!page.index</span> ##ï¿½ï¿½Ê¾ï¿½ï¿½Ç°Ò³ï¿½ï¿½
+    #foreach($i in [1..$pagePos]) ##ï¿½ï¿½ï¿½Óºï¿½ï¿½ï¿½ï¿½Î²ï¿½ï¿½
         #if($!page.totalPage - $!page.index - $i > 0)
             #set($pageIndex= $!page.index + $!i)
         <a href="$module.addQueryData("page",$pageIndex).render()">$pageIndex</a>
         #end
     #end
-    #if($!page.totalPage - $!page.index > $pagePos+1) .. #end ##ÏÔÊ¾ºóÃæµÄÊ¡ÂÔºÅ
-    #if($page.nextPageAvailable) ##ÏÔÊ¾ºóÃæµÄÒ³
+    #if($!page.totalPage - $!page.index > $pagePos+1) .. #end ##ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ê¡ï¿½Ôºï¿½
+    #if($page.nextPageAvailable) ##ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½Ò³
     <a href="$module.addQueryData("page",$!{page.totalPage}).render()">$!{page.totalPage}</a>
-    <a href="$module.addQueryData("page",$!{page.nextPage}).render()">ÏÂÒ»Ò³</a>
+    <a href="$module.addQueryData("page",$!{page.nextPage}).render()">ï¿½ï¿½Ò»Ò³</a>
     #end
     $!module.reset()
     #end        

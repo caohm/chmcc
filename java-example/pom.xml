@@ -31,8 +31,8 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.jd.common</groupId>
-            <artifactId>jd-common-util</artifactId>
+            <groupId>org.chmcc.common</groupId>
+            <artifactId>chmcc-common-util</artifactId>
             <version>1.0</version>
         </dependency>
 

@@ -12,7 +12,7 @@
     <name>example domain</name>
     <packaging>jar</packaging>
     <build>
-        <finalName>jd-example-domain-${version}</finalName>
+        <finalName>chmcc-example-domain-${version}</finalName>
     </build>
     
 </project>

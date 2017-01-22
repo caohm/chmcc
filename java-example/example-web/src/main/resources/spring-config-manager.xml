@@ -6,7 +6,7 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"/>
 
 	<!-- 
-    <bean id="cacheUtils" class="com.jd.common.cached.CacheUtils">
+    <bean id="cacheUtils" class="org.chmcc.common.cached.CacheUtils">
         <property name="cacheServerAddress">
             <list>
                 <value>${example.memcached1.address}</value>
@@ -15,6 +15,6 @@
         </property>
     </bean>
     -->
-    <bean id="exampleManager" class="com.jd.helloworld.manager.example.impl.ExampleManagerImpl"/>
-    <bean id="exampleManagerCached" class="com.jd.helloworld.manager.example.impl.ExampleManagerCachedImpl"/>
+    <bean id="exampleManager" class="org.chmcc.helloworld.manager.example.impl.ExampleManagerImpl"/>
+    <bean id="exampleManagerCached" class="org.chmcc.helloworld.manager.example.impl.ExampleManagerCachedImpl"/>
 </beans>

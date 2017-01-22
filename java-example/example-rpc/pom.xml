@@ -24,6 +24,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>jd-example-rpc-${version}</finalName>
+        <finalName>chmcc-example-rpc-${version}</finalName>
     </build>        
 </project>

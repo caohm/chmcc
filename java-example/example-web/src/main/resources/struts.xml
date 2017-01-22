@@ -12,7 +12,7 @@
 
     <package name="example-default" extends="struts-default"  >
         <result-types>
-            <result-type name="velocity" class="com.jd.common.struts.velocity.VelocityLayoutResult" default="true">
+            <result-type name="velocity" class="org.chmcc.common.struts.velocity.VelocityLayoutResult" default="true">
                 <param name="toolsBeanId">velocityTools</param>
                 <param name="urlBeanId">velocityUrl</param>
             </result-type>

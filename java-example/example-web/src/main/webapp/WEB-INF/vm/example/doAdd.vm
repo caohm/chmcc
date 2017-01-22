@@ -1,10 +1,10 @@
-#* @vtlvariable name="example" type="com.jd.helloworld.domain.example.Example" *#
+#* @vtlvariable name="example" type="org.chmcc.helloworld.domain.example.Example" *#
 #* @vtlvariable name="exampleId" type="java.lang.Integer" *#
-#* @vtlvariable name="result" type="com.jd.common.web.result.Result" *#
+#* @vtlvariable name="result" type="org.chmcc.common.web.result.Result" *#
 
 #if($result.success)
-    ÄúÒÑ¾­³É¹¦Ìí¼Ó¡£idÎª£º$!exampleId£¬nameÎª£º$!example.name <br/>
-    <a href="list.action">µã»÷Õâ¶ùµãµ½ÁÐ±í</a>
+    ï¿½ï¿½ï¿½Ñ¾ï¿½ï¿½É¹ï¿½ï¿½ï¿½Ó¡ï¿½idÎªï¿½ï¿½$!exampleIdï¿½ï¿½nameÎªï¿½ï¿½$!example.name <br/>
+    <a href="list.action">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ãµ½ï¿½Ð±ï¿½</a>
 #else
     #parse("/WEB-INF/vm/example/add.vm")
 #end

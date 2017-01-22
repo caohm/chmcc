@@ -1,11 +1,11 @@
-#* @vtlvariable name="example" type="com.jd.helloworld.domain.example.Example" *#
+#* @vtlvariable name="example" type="org.chmcc.helloworld.domain.example.Example" *#
 #showSimpleError()
 <form action="doAdd.action" method="post">
-    Ãû³Æ£º<input type="text" name="example.name" value="$!stringEscapeUtils.escapeHtml($!example.name)" size="40"> <br/>
-    ÀàÐÍ£º<select name="example.type">
-    <option value="1" #if($example.type == 1) selected="selected" #end>ÀàÐÍ1</option>
-    <option value="2" #if($example.type == 2) selected="selected" #end>ÀàÐÍ2</option>
-    <option value="3" #if($example.type == 3) selected="selected" #end>ÀàÐÍ3</option>
+    ï¿½ï¿½ï¿½Æ£ï¿½<input type="text" name="example.name" value="$!stringEscapeUtils.escapeHtml($!example.name)" size="40"> <br/>
+    ï¿½ï¿½ï¿½Í£ï¿½<select name="example.type">
+    <option value="1" #if($example.type == 1) selected="selected" #end>ï¿½ï¿½ï¿½ï¿½1</option>
+    <option value="2" #if($example.type == 2) selected="selected" #end>ï¿½ï¿½ï¿½ï¿½2</option>
+    <option value="3" #if($example.type == 3) selected="selected" #end>ï¿½ï¿½ï¿½ï¿½3</option>
     </select>  <br/>
     <input type="submit">
 </form>

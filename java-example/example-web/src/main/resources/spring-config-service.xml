@@ -3,5 +3,5 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" default-autowire="byName">
  
-    <bean id="exampleService" class="com.jd.helloworld.service.example.impl.ExampleServiceImpl" />
+    <bean id="exampleService" class="org.chmcc.helloworld.service.example.impl.ExampleServiceImpl" />
 </beans>

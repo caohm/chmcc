@@ -22,13 +22,13 @@
             <version>1.8.0</version>
         </dependency>
         <dependency>
-            <groupId>com.jd.common</groupId>
-            <artifactId>jd-common-cached</artifactId>
+            <groupId>org.chmcc.common</groupId>
+            <artifactId>chmcc-common-cached</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.jd.common</groupId>
-            <artifactId>jd-common-manager</artifactId>
+            <groupId>org.chmcc.common</groupId>
+            <artifactId>chmcc-common-manager</artifactId>
             <version>1.0</version>
         </dependency>
         

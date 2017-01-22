@@ -1,6 +1,6 @@
 package com.chmcc.helloworld.manager.example;
 
-import com.jd.common.util.PaginatedList;
+import org.chmcc.common.util.PaginatedList;
 import com.chmcc.helloworld.domain.example.Example;
 import com.chmcc.helloworld.manager.BaseTest;
 import org.apache.commons.logging.Log;

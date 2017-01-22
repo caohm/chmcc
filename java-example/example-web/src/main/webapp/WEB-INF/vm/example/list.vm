@@ -1,26 +1,26 @@
-#* @vtlvariable name="example" type="com.jd.helloworld.domain.example.Example" *#
+#* @vtlvariable name="example" type="org.chmcc.helloworld.domain.example.Example" *#
 #* @vtlvariable name="message" type="java.lang.Integer" *#
 #* @vtlvariable name="sequence" type="java.lang.Integer" *#
-#* @vtlvariable name="examples" type="com.jd.common.util.PaginatedList<com.jd.helloworld.domain.example.Example>" *#
-#* @vtlvariable name="page" type="com.jd.common.util.PaginatedList" *#
-#set($title = "ÁÐ±í")
+#* @vtlvariable name="examples" type="org.chmcc.common.util.PaginatedList<org.chmcc.helloworld.domain.example.Example>" *#
+#* @vtlvariable name="page" type="org.chmcc.common.util.PaginatedList" *#
+#set($title = "ï¿½Ð±ï¿½")
 
-hascode£º$message
+hascodeï¿½ï¿½$message
 #showSimpleMessage()
 
 
-<a href="$!exampleModule.getTarget("/example-web/example/add.action")">µã»÷Õâ¶ùÐÂÔö</a>
+<a href="$!exampleModule.getTarget("/example-web/example/add.action")">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>
 
 <form action="$!exampleModule.getTarget("/example-web/example/list.action")" method="get">
 
-    ²éÑ¯£º<input type="text" name="example.name" size="30" value="$!stringEscapeUtils.escapeHtml($!example.name)"/>
+    ï¿½ï¿½Ñ¯ï¿½ï¿½<input type="text" name="example.name" size="30" value="$!stringEscapeUtils.escapeHtml($!example.name)"/>
     <input type="submit"/>
 </form>
 <table border="1" style="outline:aqua" cellpadding="0" cellspacing="0" width="500">
     <thead>
-    <th>Ãû³Æ</th>
-    <th>ÀàÐÍ</th>
-    <th>´´½¨ÈÕÆÚ</th>
+    <th>ï¿½ï¿½ï¿½ï¿½</th>
+    <th>ï¿½ï¿½ï¿½ï¿½</th>
+    <th>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
     </thead>
     <tbody>
 #foreach($example in $examples)

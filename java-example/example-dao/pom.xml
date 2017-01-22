@@ -34,8 +34,8 @@
             <version>1.4</version>
         </dependency>
         <dependency>
-            <groupId>com.jd.common</groupId>
-            <artifactId>jd-common-dao</artifactId>
+            <groupId>org.chmcc.common</groupId>
+            <artifactId>chmcc-common-dao</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>  
@@ -45,6 +45,6 @@
         </dependency> 
     </dependencies>
     <build>
-        <finalName>jd-example-dao-${version}</finalName>
+        <finalName>chmcc-example-dao-${version}</finalName>
     </build>
 </project>

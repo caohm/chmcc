@@ -1,17 +1,17 @@
 #* @vtlvariable name="exception" type="java.lang.Exception" *#
-#* @vtlvariable name="result" type="com.jd.common.web.result.Result" *#
+#* @vtlvariable name="result" type="org.chmcc.common.web.result.Result" *#
 #if($exception)
     #if($!exception.class.simpleName=="NoSuchMethodException")
         $!response.setStatus(404)
-        404! ÄúÇëÇóµÄÄÚÈÝ²»´æÔÚ
+        404! ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý²ï¿½ï¿½ï¿½ï¿½ï¿½
     #else
-        ³ö´íÁË£º  $exception.message
+        ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½  $exception.message
     #end
 #elseif($result)
     #if($result.resultCode)
         #showSimpleError()    
     #else
-        ÏµÍ³´íÎó
+        ÏµÍ³ï¿½ï¿½ï¿½ï¿½
     #end
 #end
  
