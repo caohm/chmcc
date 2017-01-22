@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+        xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.chmcc.example</groupId>
+        <artifactId>chmcc-example</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>example-web</artifactId>
+    <packaging>war</packaging>
+    <name>example web</name>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.8.0.GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-json-plugin</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.common</groupId>
+            <artifactId>jd-common-struts</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.common</groupId>
+            <artifactId>jd-common-web</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.chmcc.example</groupId>
+            <artifactId>example-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>example-web.war</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+    <profiles>
+        <profile>
+            <id>development</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <example.cookie.key>xLyhSVcQGix62o+t2fjZyx+bC+zQZCl2</example.cookie.key>
+                <!--<example.cookie.domain>.360buy.net</example.cookie.domain>-->
+                <example.log.level>DEBUG</example.log.level>
+                <example.log.path>d:/logs</example.log.path>
+                <example.memcached1.address>10.10.224.102:11211</example.memcached1.address>
+                <example.memcached2.address>10.10.224.102:11212</example.memcached2.address>
+                <example.struts.devMode>true</example.struts.devMode>
+                <example.domain.name>localhost:8080</example.domain.name>
+                <!--<example.asset.domain.name>misc.360buyimg.net</example.asset.domain.name>-->
+                <example.jdbc.datasource.type>dbcp</example.jdbc.datasource.type>
+                <example.jdbc.driver>com.mysql.jdbc.Driver</example.jdbc.driver>
+                <example.jdbc.url>jdbc:mysql://localhost:3402/popdb</example.jdbc.url>
+                <example.jdbc.username>root</example.jdbc.username>
+                <example.jdbc.password>123456</example.jdbc.password>
+            </properties>
+        </profile>
+    </profiles>
+</project>

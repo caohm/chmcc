@@ -1,0 +1,48 @@
+{
+  "name": "外部调用",
+  "title": "外部机房",
+  "children": [
+    {
+      "name": "origin.pc",
+      "title": "渠道",
+      "children": [
+        {
+          "name": "trade.sdk",
+          "title": "mjq",
+          "children": [
+            {
+              "name": "payship.sdk",
+              "title": "mjq"
+            },
+            {
+              "name": "address.sdk",
+              "title": "mjq"
+            },
+            {
+              "name": "invoice.sdk",
+              "title": "mjq"
+            }
+          ]
+        },
+        {
+          "name": "trade.sdk",
+          "title": "lf",
+          "children": [
+            {
+              "name": "payship.sdk",
+              "title": "lf"
+            },
+            {
+              "name": "address.sdk",
+              "title": "lf"
+            },
+            {
+              "name": "invoice.sdk",
+              "title": "lf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

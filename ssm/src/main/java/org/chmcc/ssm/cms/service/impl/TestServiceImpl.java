@@ -1,6 +1,6 @@
 package org.chmcc.ssm.cms.service.impl;
 
-import org.chmcc.ssm.cms.interfaces.impl.InterfaceImpl1;
+import org.chmcc.ssm.cms.impl.InterfaceImpl1;
 import org.chmcc.ssm.cms.service.TestService;
 import org.chmcc.ssm.cms.service.bean1;
 import org.chmcc.ssm.cms.service.util.TestUtils;

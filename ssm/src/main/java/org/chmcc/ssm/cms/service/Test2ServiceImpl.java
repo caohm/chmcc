@@ -1,6 +1,6 @@
 package org.chmcc.ssm.cms.service;
 
-import org.chmcc.ssm.cms.interfaces.impl.impl2.InterfaceImpl2;
+import org.chmcc.ssm.cms.impl.impl2.InterfaceImpl2;
 import org.chmcc.ssm.cms.service.bean.bean2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
