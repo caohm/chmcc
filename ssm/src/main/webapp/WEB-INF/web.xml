@@ -3,9 +3,9 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
-    <display-name>ssm</display-name>
+    <display-name>springmvc</display-name>
     <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
     </welcome-file-list>
     <!--
         <login-config>
@@ -114,19 +114,19 @@
     <!-- 配置错误页面 -->
     <error-page>
         <error-code>403</error-code>
-        <location>/error/403.jsp</location>
+        <location>/error/error-403.html</location>
     </error-page>
     <error-page>
         <error-code>404</error-code>
-        <location>/error/404.jsp</location>
+        <location>/error/error-404.html</location>
     </error-page>
     <error-page>
         <exception-type>org.hibernate.ObjectNotFoundException</exception-type>
-        <location>/error/404.jsp</location>
+        <location>/error/error-404.html</location>
     </error-page>
     <error-page>
         <error-code>500</error-code>
-        <location>/error/500.jsp</location>
+        <location>/error/error-500.html</location>
     </error-page>
 
     <!--    &lt;!&ndash;filter&ndash;&gt;

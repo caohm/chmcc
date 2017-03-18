@@ -21,7 +21,7 @@
     <!-- 父容器  不扫描子容器controller -->
     <context:annotation-config/>
     <task:annotation-driven/> <!-- 配置事物起作用 -->
-    <context:component-scan base-package="org.chmcc.ssm">
+    <context:component-scan base-package="org.chmcc.springmvc">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -74,7 +74,7 @@
     <!-- MyBatis begin -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="org.chmcc.ssm.cms.model"/>
+        <property name="typeAliasesPackage" value="org.chmcc.springmvc.model"/>
         <property name="mapperLocations" value="classpath:/mappings/**/*.xml"/>
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
     </bean>
@@ -82,7 +82,7 @@
     <!-- 扫描basePackage下所有以@MyBatisDao注解的接口 -->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
-        <property name="basePackage" value="org.chmcc.ssm.cms.dao"/>
+        <property name="basePackage" value="org.chmcc.springmvc.dao"/>
     </bean>
 
     <!-- 定义事务 -->
@@ -112,12 +112,12 @@
     </tx:advice>
     <aop:config expose-proxy="true">
         <!-- 只对业务逻辑层实施事务 -->
-        <aop:pointcut id="txPointcut"
-                      expression="execution(* org.chmcc.ssm..service..*(..))"/>
+        <aop:pointcut id="txPointcut" expression="execution(* org.chmcc.springmvc.service..*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
     </aop:config>
 
     <import resource="spring/spring-aop.xml"/>
     <import resource="spring/spring-cache.xml"/>
     <import resource="spring/spring-shiro.xml"/>
+    <import resource="spring/spring-redis.xml"/>
 </beans>

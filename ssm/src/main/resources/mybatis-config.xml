@@ -25,22 +25,22 @@
         <!--<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>-->
     <!--</settings>-->
 <!--    <typeAliases>
-        &lt;!&ndash;<typeAlias alias="User" type="org.chmcc.ssm.cms.model.User"/>&ndash;&gt;
-        <package name="org.chmcc.ssm.cms.model"/>
+        &lt;!&ndash;<typeAlias alias="User" type="User"/>&ndash;&gt;
+        <package name="org.chmcc.springmvc.model"/>
     </typeAliases>-->
     <!--<typeHandlers>-->
-        <!--&lt;!&ndash;<typeHandler handler="org.chmcc.ssm.cms.mybatis.handler.ExampleTypeHandler"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<typeHandler handler="ExampleTypeHandler"/>&ndash;&gt;-->
         <!--&lt;!&ndash;<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler" javaType="java.math.RoundingMode"/>&ndash;&gt;-->
-        <!--<package name="org.chmcc.ssm.cms.mybatis.handler"/>-->
+        <!--<package name="org.chmcc.springmvc.mybatis.handler"/>-->
     <!--</typeHandlers>-->
-    <!--<objectFactory type="org.chmcc.ssm.cms.mybatis.factory.ExampleObjectFactory">-->
+    <!--<objectFactory type="ExampleObjectFactory">-->
         <!--<property name="someProperty" value="100"/>-->
     <!--</objectFactory>-->
     <plugins>
         <plugin interceptor="com.github.miemiedev.mybatis.paginator.OffsetLimitInterceptor">
             <property name="dialectClass" value="com.github.miemiedev.mybatis.paginator.dialect.MySQLDialect"/>
         </plugin>
-        <!--<plugin interceptor="org.chmcc.ssm.cms.mybatis.plugin.ExamplePlugin">-->
+        <!--<plugin interceptor="ExamplePlugin">-->
             <!--<property name="someProperty" value="100"/>-->
         <!--</plugin>-->
     </plugins>

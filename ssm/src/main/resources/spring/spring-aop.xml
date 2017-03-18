@@ -5,17 +5,17 @@
     <aop:aspectj-autoproxy proxy-target-class="true"/>
     <aop:config>
         <aop:aspect id="interfaceAspect" ref="adviceUtils">
-            <aop:pointcut id="interfaceAop" expression="execution(* org.chmcc.ssm.cms.interfaces..*.*(..))"/>
+            <aop:pointcut id="interfaceAop" expression="execution(* org.chmcc.springmvc.service.interfaces..*.*(..))"/>
             <aop:around pointcut-ref="interfaceAop" method="doInterfaceAround"/>
         </aop:aspect>
         <aop:aspect id="serviceAspect" ref="adviceUtils">
-            <aop:pointcut id="serviceAop" expression="execution(* org.chmcc.ssm.cms.service..*.*(..))"/>
+            <aop:pointcut id="serviceAop" expression="execution(* org.chmcc.springmvc.service..*.*(..))"/>
             <aop:around pointcut-ref="serviceAop" method="doServiceAround"/>
         </aop:aspect>
         <aop:aspect id="daoAspect" ref="adviceUtils">
-            <aop:pointcut id="daoAop" expression="execution(* org.chmcc.ssm.cms.dao..*.*(..)) "/>
+            <aop:pointcut id="daoAop" expression="execution(* org.chmcc.springmvc.dao..*.*(..)) "/>
             <aop:around pointcut-ref="daoAop" method="doDaoAround"/>
         </aop:aspect>
     </aop:config>
-    <bean id="adviceUtils" class="org.chmcc.ssm.cms.aop.AdviceUtils"/>
+    <bean id="adviceUtils" class="org.chmcc.springmvc.aop.AdviceUtils"/>
 </beans>

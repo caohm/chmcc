@@ -18,12 +18,12 @@
         <property name="configLocation" value="classpath:/cache/shiro-ehcache.xml"/>
     </bean>
 
-    <bean id="cacheManager" class="org.chmcc.ssm.cms.shiro.SpringCacheManagerWrapper">
+    <bean id="cacheManager" class="org.chmcc.springmvc.shiro.SpringCacheManagerWrapper">
         <property name="cacheManager" ref="springCacheManager"/>
     </bean>
 
     <!-- 凭证匹配器 -->
-    <bean id="credentialsMatcher" class="org.chmcc.ssm.cms.shiro.RetryLimitHashedCredentialsMatcher">
+    <bean id="credentialsMatcher" class="org.chmcc.springmvc.shiro.RetryLimitHashedCredentialsMatcher">
         <constructor-arg ref="cacheManager"/>
         <property name="hashAlgorithmName" value="md5"/>
         <property name="hashIterations" value="2"/>
@@ -31,7 +31,7 @@
     </bean>
 
     <!-- Realm实现 -->
-    <bean id="userRealm" class="org.chmcc.ssm.cms.shiro.UserRealm">
+    <bean id="userRealm" class="org.chmcc.springmvc.shiro.UserRealm">
         <!--<property name="userService" ref="userService"/>-->
         <property name="credentialsMatcher" ref="credentialsMatcher"/>
         <property name="cachingEnabled" value="false"/>
@@ -88,11 +88,11 @@
     </bean>
 
     <!-- 基于Form表单的身份验证过滤器 -->
-    <bean id="formAuthenticationFilter" class="org.chmcc.ssm.cms.shiro.FormAuthenticationCaptchaFilter">
+    <bean id="formAuthenticationFilter" class="org.chmcc.springmvc.shiro.FormAuthenticationCaptchaFilter">
         <property name="usernameParam" value="username"/>
         <property name="passwordParam" value="password"/>
         <property name="captchaParam" value="captcha"/>
-        <property name="loginUrl" value="/user/login"/>
+        <property name="loginUrl" value="/login"/>
     </bean>
     <bean id="sslFilter" class="org.apache.shiro.web.filter.authz.SslFilter">
         <property name="port" value="8443"/>
@@ -100,9 +100,9 @@
     <!-- Shiro的Web过滤器 -->
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
-        <property name="loginUrl" value="/user/login"/>
-        <property name="successUrl" value="/user/center?login"/>
-        <property name="unauthorizedUrl" value="/test/index"/>
+        <property name="loginUrl" value="/login"/>
+        <property name="successUrl" value="/index"/>
+        <property name="unauthorizedUrl" value="/unauthorized"/>
         <property name="filters">
             <util:map>
                 <entry key="authc" value-ref="formAuthenticationFilter"/>
@@ -112,12 +112,12 @@
         <property name="filterChainDefinitions">
             <value>
                 /resources/** = anon      <!--anon 不需要有登陆权限才可以访问的资源 -->
-                /index.jsp = anon         <!--anon 不需要有登陆权限才可以访问的资源 -->
-                /unauthorized.jsp = authc <!--authc 需要有登陆权限才可以访问的资源，如果没有就跳转到loginUrl -->
-                /test/** = anon
-                /user/** =authc
-                /user/** =authc
+                /assets/** = anon
+                /UnAuthorized= authc <!--authc 需要有登陆权限才可以访问的资源，如果没有就跳转到loginUrl -->
+                /login = anon
                 /logout = logout
+                /captcha = anon
+                /** = authc
             </value>
         </property>
     </bean>

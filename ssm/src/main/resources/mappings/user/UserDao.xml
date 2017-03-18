@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="org.chmcc.ssm.cms.dao.UserDao">
-    <resultMap type="org.chmcc.ssm.cms.model.User" id="User">
+<mapper namespace="org.chmcc.springmvc.dao.user.UserDao">
+    <resultMap type="org.chmcc.springmvc.model.User" id="User">
         <id column="Id" property="id" jdbcType="BIGINT"></id>
         <result column="organization_id" property="organizationId" jdbcType="BIGINT"></result>
         <result column="username" property="username" jdbcType="VARCHAR"></result>
