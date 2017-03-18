@@ -7,7 +7,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>bootstrap</module>
-        <module>springmvc-web</module>
+        <!--<module>springmvc-web</module>-->
         <module>TimingTask</module>
     </modules>
     <properties>
@@ -15,6 +15,11 @@
     </properties>
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.17</version>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
