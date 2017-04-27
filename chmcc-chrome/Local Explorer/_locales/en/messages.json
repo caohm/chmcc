@@ -1,0 +1,71 @@
+{
+   "_disable_this_if_you_got_performance_issue_": {
+      "message": "(disable this if you got performance issue)"
+   },
+   "click_browser_button_to_open_": {
+      "message": "Click the button to open this folder:"
+   },
+   "congrats_updated_to_version": {
+      "message": "Congrats! Updated to version"
+   },
+   "default_folder": {
+      "message": "Default Folder"
+   },
+   "enable_threads_for_ajax_pages": {
+      "message": "Enable threads for Ajax pages"
+   },
+   "example_1_": {
+      "message": "Example 1:"
+   },
+   "example_2_": {
+      "message": "Example 2:"
+   },
+   "example_3_": {
+      "message": "Example 3:"
+   },
+   "extDescription": {
+      "message": "File Manager for Chrome, open files and folders on local directories or network shares"
+   },
+   "extName": {
+      "message": "File Manager on web browser"
+   },
+   "guide_": {
+      "message": "Guide:"
+   },
+   "how_to_set_up": {
+      "message": "HOW TO SET UP"
+   },
+   "install_now": {
+      "message": "Install now"
+   },
+   "is_it_helpful_for_you__it_could_help_other_people_too_": {
+      "message": "Is it helpful for you? It could help other people too."
+   },
+   "it_doesn_t_work__you_need_to_install_the_integration_module_": {
+      "message": "It doesn't work? You need to install the Integration Module."
+   },
+   "options_is_saved_": {
+      "message": "Options is saved."
+   },
+   "rate_this_extension_now_": {
+      "message": "Rate this extension now."
+   },
+   "save_settings": {
+      "message": "Save Settings"
+   },
+   "settings": {
+      "message": "Settings"
+   },
+   "test_link_": {
+      "message": "For testing:"
+   },
+   "use_local_explorer_to_open_files_default": {
+      "message": "Use Local Explorer to open files (default)"
+   },
+   "use_local_explorer_to_open_folders": {
+      "message": "Use Local Explorer to open folders"
+   },
+   "we_collect_debug_info__tick_this_box_to_opt_out_": {
+      "message": "For improvement of the extension, we collect debug info. Tick this box to opt out."
+   }
+}

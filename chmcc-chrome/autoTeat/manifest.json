@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Chrome Extension: AutoTest",
+  "version": "0.0.1",
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://localhost:48080/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs"
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_title": "Autotest Extension",
+    "default_popup": "popup.html"
+  }
+}

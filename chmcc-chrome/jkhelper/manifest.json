@@ -1,0 +1,126 @@
+﻿{
+  "manifest_version": 2,
+  "name": "__MSG_ExtensionName__",
+  "version": "0.0.3",
+  "default_locale": "en",
+  "description": "__MSG_ExtensionDescription__",
+  "background": {
+    "page": "background.html"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_title": "__MSG_BrowserActionTitle__",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "contextMenus",
+    "cookies",
+    "tabs",
+    "tts",
+    "storage",
+    "contextMenus",
+    "declarativeContent",
+    "notifications",
+    "*://*/*",
+    "http://ump.jd.com/*",
+    "http://risking.jd.com/*",
+    "activeTab",
+    "\u003Call_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://mjdos.jd.com/gresource/*",
+        "*://localhost/*"
+      ],
+      "js": [
+        "js/jquery-2.0.0.min.js",
+        "js/utils/GlobalUtils.js",
+        "js/utils/util.js",
+        "js/content/content_script.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://mjdos.jd.com/gresource/*",
+        "*://localhost/*"
+      ],
+      "js": [
+        "js/utils/GlobalUtils.js",
+        "js/content/content_loadScript_start.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://mjdos.jd.com/gresource/*",
+        "*://localhost/*"
+      ],
+      "js": [
+        "js/utils/GlobalUtils.js",
+        "js/content/content_loadScript_end.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "http://ump.jd.com/performanceReport/initPage.action*"
+      ],
+      "js": [
+        "js/utils/GlobalUtils.js",
+        "js/content/content_loadScript_ump.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "http://ump.jd.com/performanceDetail/initPage.action?datas.xData=*&datas.yData=*&datas.tpName=*&datas.accessKey=*&datas.type=*&datas.dType=*&datas.appId=*"
+      ],
+      "js": [
+        "js/utils/GlobalUtils.js",
+        "js/jquery-2.0.0.min.js",
+        "js/content/content_ump_umpPerformanceDetail.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://*/ump.html*"
+      ],
+      "js": [
+        "js/utils/GlobalUtils.js",
+        "js/content/content_ump.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "http://guardian.gms.jd.com/manage/dashboard/tipOut?field=*"
+      ],
+      "js": [
+        "js/utils/GlobalUtils.js",
+        "js/content/content_guardian.js"
+      ]
+    }
+  ],
+  "content_security_policy": "script-src 'self'  'unsafe-eval' ; object-src 'self' ;",
+  "web_accessible_resources": [
+    "custom/*",
+    "js/*",
+    "config/*"
+  ],
+  "options_page": "options.html"
+}

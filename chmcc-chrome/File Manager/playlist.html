@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+  <script src="jquery-2.0.3.min.js">
+  </script>
+    <title>File Manager Playlist</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+	<style>
+	body {
+        min-width:357px;
+        overflow-x:hidden;
+      }
+	  </style>
+  </head>
+<body>
+<h1>Playlist: Add some media files and when opened these files will be autoplayed through</h1>
+<h2>NOTE: Unfortunately due to security restrictions all files of playlist must be kept in the same directory</h2>
+<h3>To play the playlist please open a file in the playlist using the File Manager and it will autoplay for you</h3>
+Add files for playlist:<br/>
+<input type="file" id="files" name="files[]" multiple />
+<output id="list"></output>
+<h2>Current Playlist&nbsp;&nbsp;&nbsp;<button id="clearButton" >(Clear)</button></h2>
+<table id="fileTable">
+</table>
+  <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+[
+  [
+  { "ip": "172.28.91.134", "port": 80, "inApp": "nginx", "inGroup": "大nginx" },
+  { "ip": "172.28.140.58", "port": 80, "inApp": "nginx", "inGroup": "大nginx" },
+  { "ip": "172.28.140.57", "port": 80, "inApp": "nginx", "inGroup": "大nginx" },
+  { "ip": "172.28.140.56", "port": 80, "inApp": "nginx", "inGroup": "大nginx" },
+  { "ip": "172.20.64.83", "port": 80, "inApp": "nginx", "inGroup": "大nginx" },
+  { "ip": "172.20.64.82", "port": 80, "inApp": "nginx", "inGroup": "大nginx" },
+  { "ip": "172.20.64.81", "port": 80, "inApp": "nginx", "inGroup": "大nginx" },
+  { "ip": "172.20.64.80", "port": 80, "inApp": "nginx", "inGroup": "大nginx" }
+  ]
+]

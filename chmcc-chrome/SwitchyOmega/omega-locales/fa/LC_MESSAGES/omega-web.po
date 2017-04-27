@@ -1,0 +1,1173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SwitchyOmega 2.3.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-13 10:29+0000\n"
+"PO-Revision-Date: 2016-08-21 08:55+0000\n"
+"Last-Translator: ReZa ZaRe <rz.zare@gmail.com>\n"
+"Language-Team: Persian "
+"<https://hosted.weblate.org/projects/switchyomega/main/fa/>\n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.8-dev\n"
+
+msgid "appNameShort"
+msgstr "SwitchyOmega"
+
+msgid "manifest_app_name"
+msgstr "پروکسی SwitchyOmega"
+
+msgid "manifest_app_description"
+msgstr ""
+"به راحتی و با سرعت بین پروکسی های خود جابهجا شوید و آنها را مدیریت کنید ."
+
+msgid "manifest_icon_default_title"
+msgstr "درحال بارگذاری .…"
+
+msgid "upgrade_profile_auto"
+msgstr "سوییچ خودکار"
+
+msgid "profile_direct"
+msgstr "[مستقیم]"
+
+msgid "profile_system"
+msgstr "[پروکسی سیستم]"
+
+msgid "condition_HostWildcardCondition"
+msgstr "فرانویسه (Wildcard) میزبان"
+
+msgid "condition_help_HostWildcardCondition"
+msgstr ""
+"انتخاب و تطبیق میزبان ها ( نام دامین ) به کمک فرا نویسه . <br><b> ستاره "
+"<code>*</code></b> صفر کارکتر یا بیشتر را تطابق میدهد .<br><b> علامت سوال "
+"<code>?</code></b> فقط یک کارکتر را انتخاب و تطابق میدهد ..<br><br>توجه "
+"داشته باشید که قوانینی که با <code>*</code>شروع میشوند به صورت ویژه تنها در "
+"شروط فرانویسه ایه میزبان کاربرد دارند .<br> به طور مثال: "
+"<code>*.example.com</code>  این ادرس ها را تشخیص میدهد. <b> www.example.com "
+"و example.com .</b><br برای انتخاب زیر دامنه ها <b>کافیست</b> ، از <b>دو</b> "
+"ستاره استفاده نمایید . <code>**.example.com</code>."
+
+msgid "condition_HostRegexCondition"
+msgstr "عبارت منظم میزبان"
+
+msgid "condition_help_HostRegexCondition"
+msgstr ""
+"همانند شرط فرانویسه ی میزبان،اما با کمک <a "
+"href='https://www.google.com/search?q=عبارت+منظم'>عبارت منظم</a>.<br> میزبان "
+"ها ( اسامی دامنه ها ) را انتخاب و تطابق میدهد . نوشتن یا حتی خواندن عبارات "
+"منظم میتواند سخت باشد.<br> پیشنهاد میشود که از فرانویسه استفاده کنید و فقط "
+"در مواقعی که به هیچ روشی نمیشود عبارتی رو یافت از عبارات منظم استفاده کنید ."
+
+msgid "condition_HostLevelsCondition"
+msgstr "سطح های میزبان"
+
+msgid "condition_help_HostLevelsCondition"
+msgstr ""
+"تنها درصورتی درخواست را انطباق میدهد که سطح میزبان در محدوده ی داده شده باشد "
+".<br> به <b> تعداد بخش های جدا شده توسط نقطه ( دات )</b> سطح میزبان ، هاست ( "
+"دامنه ) داده شده میگویند . <br> به طور مثال <code>www.example.com</code>  "
+"دارای سطح میزابن سه میباشد ، در حالی که <code>داخل</code> سطح میزبان یک را "
+"دارد."
+
+msgid "condition_UrlWildcardCondition"
+msgstr "فرانویسه ادرس (URL)"
+
+msgid "condition_help_UrlWildcardCondition"
+msgstr ""
+"ادرس های درخواست داده شده را به کمک فرانویسه بررسی و مطابقت میدهد .<br> برای "
+"اشنایی با فرانویسه به بخش فرانویسه ی میزبان مراجعه کنید .<br> توجه داشته "
+"باشید که فرانویسه ی آدرس به صورت ویژه ای برخورد نمیشوند ( تشخیص جادویی "
+"زیردامنه همانند هاست وجود ندارد ) <br> بنابراین دستور "
+"<code>*://*.example.com/*</code> ادرس http://www.example.com/ را تشخیص میدهد "
+"اما  این ادرس http://example.com را<b>تشخیص نمیدهد .</b>."
+
+msgid "condition_UrlRegexCondition"
+msgstr "عبارت منظم ادرس"
+
+msgid "condition_help_UrlRegexCondition"
+msgstr ""
+"ادرس ها  را ابزار قدرتمند <a "
+"href='https://www.google.com/search?q=عبارت+منظم'>عبارت منظم</a> تشخیص و "
+"انتطباق میدهد .<br> پیشنهاد میشود که از فرانویسه استفاده کنید و فقط در "
+"مواقعی که به هیچ روشی نمیشود عبارتی رو یافت از عبارات منظم استفاده کنید ."
+
+msgid "condition_KeywordCondition"
+msgstr "کلمات کلیدی"
+
+msgid "condition_help_KeywordCondition"
+msgstr ""
+"شرط کلمات کلیدی درصورتی انتخاب انجام میدهد که پروتکل مورد استفاده HTTP باشد ،"
+" و الگو (pattern) یک خرده-رشته ی ادرس باشد .<br> همانند الگوی فرانویسه ی "
+"ادرس کار میکند که در اینجا <code>http://*<b>pattern</b>*</code> قسمت  "
+"<b>pattern</b> الگوی کلمه ی کلیدی میباشد . <br> شرط کلمات کلیدی زمانی مفید "
+"هستند که قصد دارید از یک فایروالی که کلمات خاصی را که در ادرس بلاک میکند "
+"بگذرید . اینگونه میتوانید اینگونه ادرس های خاص را پیدا کرده و با پروکسی از "
+"ان ها عبور کرده."
+
+msgid "condition_FalseCondition"
+msgstr "(غیرفعال)"
+
+msgid "condition_details_FalseCondition"
+msgstr "(درحین بررسی این شرط در نظر گرفته نمیشود)"
+
+msgid "condition_help_FalseCondition"
+msgstr ""
+"شما میتوانید یک شرط را با قرار دادن نوع آن به  <code>(غیرفعال)</code> "
+"غیرفعال کنید . یک شرط غیرفعال طوری عمل میکند که انگار وجود ندارد .<br> از "
+"این قابلیت برای غیرفعال کردن موقت شرط استفاده نمایید .<br> شروط غیرفعال "
+"تمامی تنظیمات خود را حفظ میکنند و در صورت نیاز میتوانید با برگردان نوع آن به "
+"حالت قبلی آن را فعال کنید ."
+
+#, fuzzy
+msgid "condition_TimeCondition"
+msgstr "زمان فعلی"
+
+msgid "condition_help_TimeCondition"
+msgstr ""
+"Matches if the current local time is in the range defined by "
+"<b>starting hour</b> and <b>ending hour</b>, both inclusive.<br>"
+"Local time, starting hour and ending hour are all calculated in "
+"<b>24-hour</b> format (from <b>0 to 23</b>). <br>"
+"The calculation happens roughly at the moment when the request is sent."
+
+#, fuzzy
+msgid "condition_WeekdayCondition"
+msgstr "روز هفته"
+
+msgid "condition_help_WeekdayCondition"
+msgstr ""
+"Matches if the <b>current day of week</b> is selected in condition details. "
+"Day is calculated according to local timezone.<br>"
+"The request and its URL don't matter to this condition. "
+"The result is solely based on the day of the week when the request is sent."
+
+msgid "condition_group_default"
+msgstr " "
+
+msgid "condition_group_host"
+msgstr "میزبان"
+
+msgid "condition_group_url"
+msgstr "ادرس"
+
+msgid "condition_group_special"
+msgstr "ویژه"
+
+msgid "ruleListFormat_Switchy"
+msgstr "Switchy"
+
+msgid "ruleListFormat_AutoProxy"
+msgstr "پروکسی خودکار"
+
+msgid "ruleList_usageUrl"
+msgstr "https://github.com/FelisCatus/SwitchyOmega/wiki/RuleListUsage"
+
+msgid "ruleList_error_resultNotEnabled"
+msgstr "دستور '@with result' غایب است!"
+
+msgid "ruleList_error_unknownProfile"
+msgstr "پروفایل ناشناس : $PROFILE$"
+
+msgid "ruleList_error_missingResultProfile"
+msgstr "نام نتیجه ی پروفایل در خط $LNO$: $SOURCE$ غایب است"
+
+msgid "ruleList_error_invalidRule"
+msgstr "قانون نامعتبر در خط $LNO$: $SOURCE$"
+
+msgid "ruleList_error_noDefaultRule"
+msgstr "قانون پیش فرض با شرط انتخاب همه '*' غایب است !"
+
+msgid "dialog_close"
+msgstr "بستن"
+
+msgid "dialog_save"
+msgstr "ذخیره تغییرات"
+
+msgid "dialog_ok"
+msgstr "اکی"
+
+msgid "dialog_cancel"
+msgstr "کنسل"
+
+msgid "inputClear_clear"
+msgstr "پاک"
+
+msgid "inputClear_restore"
+msgstr "بازگرداندن"
+
+msgid "options_title"
+msgstr "تنظیمات SwitchyOmega"
+
+msgid "options_navHeader_setting"
+msgstr "تنظیمات"
+
+msgid "options_navHeader_profiles"
+msgstr "پروفایل ها"
+
+msgid "options_navHeader_actions"
+msgstr "اکشن ها"
+
+msgid "options_tab_ui"
+msgstr "رابط"
+
+msgid "options_tab_general"
+msgstr "عمومی"
+
+msgid "options_tab_importExport"
+msgstr "واردکردن/خروجی گرفتن"
+
+msgid "options_newProfile"
+msgstr "پروفایل جدید .…"
+
+msgid "options_apply"
+msgstr "ذخیره ی تغییرات"
+
+msgid "options_discard"
+msgstr "بیخیال تغییرات"
+
+msgid "options_reset"
+msgstr "ریست کردن تنظیمات"
+
+msgid "options_group_miscOptions"
+msgstr "دیگر تنظیمات"
+
+msgid "options_confirmDeletion"
+msgstr "تصدیق در زمان حذف شروط."
+
+msgid "options_refreshOnProfileChange"
+msgstr "رفرش کردن تب کنونی در هنگام تغییر پروفایل."
+
+msgid "options_showInspectMenu"
+msgstr ""
+"مجوز برای بررسی پروکسی مورد استفاده برای یک المان صفحه در منوی زمنیه ("
+"context menu)."
+
+msgid "options_group_keyboardShortcut"
+msgstr "میانبرهای کیبرد"
+
+msgid "options_menuShortcutHelp"
+msgstr "کلید میانبر برای باز کردن منوی popup . ( پیش فرض  Alt+Shift+O )."
+
+msgid "options_menuShortcutMore"
+msgstr ""
+"با استفاده از دکمه های کیبرد میتوانید به موارد داخل منوی بالاپر (popup) "
+"دسترسی داشته باشید . با فشاردادن ؟ ( یا /) میتوانید بیشتر یاد بگیرید ."
+
+msgid "options_menuShortcutConfigure"
+msgstr "تنظیم میانبر ها"
+
+msgid "options_group_switchOptions"
+msgstr "تنظیم جابه جایی"
+
+msgid "options_startupProfile"
+msgstr "پروفایل شروع برنامه"
+
+msgid "options_startupProfile_none"
+msgstr "(پروفایل کنونی)"
+
+msgid "options_showConditionTypesAdvanced"
+msgstr "نمایش حالت های پیشرفته ی شروط"
+
+msgid "options_showConditionTypesAdvancedHelp"
+msgstr ""
+"نوع های جدید پیشرفته اما پیچیده تر از شرط ها را فعال کنید .برای بیشتر حالات "
+"نوع های عادی کافی میباشد ، این گزینه پیشنهاد نمیشود ."
+
+msgid "options_quickSwitch"
+msgstr "جا به جایی سریع"
+
+msgid "options_cycledProfiles"
+msgstr "پروفایل های چرخشی"
+
+msgid "options_cycledProfilesHelp"
+msgstr ""
+"وقتی بر روی آیکون کلید میکنید ( یا از میانبرهای بالا ) استفاده میکنید  ،"
+"پروفایل های زیر به ترتیب اجرا میشوند ."
+
+msgid "options_cycledProfilesTooFew"
+msgstr ""
+"شما باید حداقل دو پروفایل را انتخاب کنید برای فعال کردن این وظیفه ! میتوانید "
+"از جعبه ی زیر آن را به اینجا بکشید ."
+
+msgid "options_notCycledProfiles"
+msgstr "پروفایل های غیرچرخشی"
+
+msgid "options_group_proxyChanges"
+msgstr "تغییر پروکسی"
+
+msgid "options_revertProxyChanges"
+msgstr "بازگرداندن تغییرات پروکسی انجام شده توسط دیگر برنامه ها."
+
+msgid "options_group_networkRequests"
+msgstr "درخواست های شبکه"
+
+msgid "options_monitorWebRequests"
+msgstr "نمایش میزان درخواست های  ناموفق منابع وب در تب کنونی."
+
+msgid "options_monitorWebRequestsHelp"
+msgstr ""
+"یک نشان زرد بر روی آیکون قرارخواهد گرفت اگر در لود شدن منبعی مشکل پیش بیاید "
+",<br> و شما میتوانید به راحتی پروفایل این گونه منابع را در منوی بالاپر(popup)"
+" تنظیم کنید ."
+
+msgid "options_downloadOptions"
+msgstr "دانلود تنظیمات"
+
+msgid "options_downloadOptionsHelp"
+msgstr "تناوب بروزرسانی لیست قوانین آنلاین و اسکریپت های PAC را تنظیم کنید ."
+
+msgid "options_downloadInterval"
+msgstr "فاصله ی دانلود"
+
+msgid "options_downloadInterval_15"
+msgstr "15 دقیقه"
+
+msgid "options_downloadInterval_60"
+msgstr "1 ساعت"
+
+msgid "options_downloadInterval_180"
+msgstr "3 ساعت"
+
+msgid "options_downloadInterval_360"
+msgstr "6 ساعت"
+
+msgid "options_downloadInterval_720"
+msgstr "12 ساعت"
+
+msgid "options_downloadInterval_1440"
+msgstr "هر روز"
+
+msgid "options_downloadInterval_never"
+msgstr "هرگز"
+
+msgid "options_group_importExportProfile"
+msgstr "پروفایل"
+
+msgid "options_exportPacFile"
+msgstr "خروجی به صورت فایل PAC"
+
+msgid "options_exportPacFileHelp"
+msgstr ""
+"خروجی گرفتن پروفایل کنونی به صورت فایل PAC ، برای استفاده در دیگر مرورگرها ."
+
+msgid "options_exportProfileHelp"
+msgstr ""
+"برای خروجی گرفتن از یک پروفایل ، از عملگر سمت راست بالای صفحه ی پروفایل ها "
+"استفاده نمایید ."
+
+msgid "options_exportLegacyRuleList"
+msgstr ""
+"لیست قوانین را به فرمت سازگار با  \"Proxy Switchy!/SwitchyPlus/SwitchySharp\""
+" در زمان ممکن خروجی بگیر ."
+
+msgid "options_exportLegacyRuleListHelp"
+msgstr ""
+"این گزینه را تنها درصورتی که میخواهید لیست قوانین را برای کاربران اون پروژه "
+"ها انتشار دهید فعال کنید . <br>لطفا به کاربران خود پیشنهاد بروزرسانی به "
+"SwitchyOmega را برای بهره بری بهتر پیشنهاد دهید ."
+
+msgid "options_group_importExportSettings"
+msgstr "تنظیمات"
+
+msgid "options_makeBackup"
+msgstr "گرفتن پشتیبان"
+
+msgid "options_makeBackupHelp"
+msgstr "گرفتن پشتیبان کامل از تنظیمات ( شامل پروفایل ها و تمامی تنظیمات )."
+
+msgid "options_restoreLocal"
+msgstr "برگرداندن از فایل"
+
+msgid "options_restoreLocalHelp"
+msgstr "برگرداندن تنظیمات SwitchyOmega  از یک فایل محلی."
+
+msgid "options_restoreOnline"
+msgstr "بازگرداندن از فایل آنلاین"
+
+msgid "options_restoreOnlinePlaceholder"
+msgstr "تنظیمات آدرس فایل ( به طور مثال 'http://example.com/switchy.bak' )"
+
+msgid "options_restoreOnlineSubmit"
+msgstr "بازگرداندن"
+
+msgid "options_group_syncing"
+msgstr "همگام سازی ( ازمایشی )"
+
+msgid "options_syncEnable"
+msgstr "فعال سازی همگام سازی"
+
+msgid "options_syncEnableForce"
+msgstr "دانلود از همگام سازی"
+
+msgid "options_syncDisable"
+msgstr "غیرفعال کردن همگام سازی"
+
+msgid "options_syncReset"
+msgstr "پاک کردن کپی ریموت"
+
+msgid "options_syncPristineHelp"
+msgstr ""
+"شما اکنون میتوانید به صورت خودکار تمامی تنظیمات و پروفایل های خود را بین "
+"تمامی دستگاه های خانگی که از مرورگر کروم استفاده میکنند همگام سازی کنید ."
+
+msgid "options_syncSyncAlert"
+msgstr "تنظیمات شما به صورت خودکار بین دیگر دستگاه های خود همگام سازی میشوند ."
+
+msgid "options_syncSyncHelp"
+msgstr ""
+"لطفا توجه داشته باشید که برای کارکردن همگام سازی باید در مرورگرهای کروم خود "
+"وارد شده باشید (همین دستگاه راهم شامل میشود ).<br>میتوانید این قسمت را در "
+"دیگر دستگاه ها بررسی کنید تا مطمئن شوید که کار میکند ."
+
+msgid "options_syncConflictAlert"
+msgstr ""
+"شما یک کپی از تنظیمات خود را در یک دستگاه دیگر با استفاده از همگام سازی "
+"فراهم ساختید ."
+
+msgid "options_syncConflictHelp"
+msgstr ""
+"شما میتوانید کپی موجود در دیگر دستگاه خود را در اینجا دانلود کنید .<br>هرچند "
+"این عمل باعث میشود <b> تنظیمات این دستگاه پاک و تنظیمات آن یکی پروفایل مورد "
+"استفاده قرار گیرد </b>."
+
+msgid "options_syncUnsupportedHelp"
+msgstr ""
+"همگام سازی تنظیمات بر روی پلتفورم یا مرورگر پشتیبانی نمیشود . تا کنون  ،تنها "
+"مرورگر کروم خانگی پشتیبانی میشود."
+
+msgid "options_profileSyncDisabled"
+msgstr "همگام سازی برای این پروفایل غیرفعال میباشد ."
+
+msgid "options_profileSyncDisabled_quotaPerItem"
+msgstr ""
+"همگام سازی برای این پروفایل به دلیل استفاده ی زیاد از فضای حافظه غیرفعال شده "
+"است ."
+
+msgid "options_profileTabPrefix"
+msgstr "پروفایل :: "
+
+msgid "options_renameProfile"
+msgstr "تغییر نام"
+
+msgid "options_deleteProfile"
+msgstr "پاک کردن"
+
+msgid "options_profileExportRuleList"
+msgstr "انتشار لیست قوانین"
+
+msgid "options_profileExportRuleListHelp"
+msgstr "قوانین تغییر را به صورت تکست برای انتشار خروجی بگیر ."
+
+msgid "options_profileExportPac"
+msgstr "خروج PAC"
+
+msgid "options_profileUnsupported"
+msgstr "نوع $TYPE$! برای پروفایل پشتیبانی نمیشود!"
+
+msgid "options_profileUnsupportedHelp"
+msgstr "این گزینه ممکن است خراب شده باشد ، یا از یک ورژن جدیدی از برنامه باشد ."
+
+msgid "options_profileEditSource"
+msgstr "ویرایش سورس کد"
+
+msgid "options_profileEditSourceHelp"
+msgstr "نمایش کمک درباره ی فرمت سورس کد"
+
+msgid "options_profileEditSourceHelpUrl"
+msgstr ""
+"https://github.com/FelisCatus/SwitchyOmega/wiki/SwitchyOmega-conditions-"
+"format#result-profile"
+
+msgid "options_group_proxyServers"
+msgstr "سرور های پروکسی"
+
+msgid "options_proxy_scheme"
+msgstr "طرح"
+
+msgid "options_proxy_protocol"
+msgstr "پروتکل"
+
+msgid "options_proxy_server"
+msgstr "سرور"
+
+msgid "options_proxy_port"
+msgstr "پورت"
+
+msgid "options_proxy_auth"
+msgstr "تصدیق"
+
+msgid "options_proxy_authAllWarningPac"
+msgstr ""
+"اخطار : نام کاربری / رمز عبور ممکن است برای سرور های غیرمنتظره توسط اسکریپت "
+"PAC بازگشتی فرستاده شود ."
+
+msgid "options_proxy_authAllWarningPacUrl"
+msgstr ""
+"قبل از ارسال هرگونه اطلاعات حساس ، لطفا از اعتبار اسکریپ فراهم شده در ادرس "
+"بالا اطمینان حاصل فرمایید ."
+
+msgid "options_proxy_authAllWarningPacScript"
+msgstr ""
+"قبل از ارسال هرگونه اطلاعات حساس ،لطفا از اعتبار اسکریپ فراهم شده در پایین "
+"اطمینان حاصل فرمایید ."
+
+msgid "options_proxy_authReferencedWarning"
+msgstr ""
+"در ضمن ، استفاده از این پروفایل در دیگر پروفایل ها ( به طور مثال : پروفایل "
+"متغیر ) ممکن است باعث ارسال نام کاربری / رمز به سرور های تعیین شده در دیگر "
+"پروفایل ها شود."
+
+msgid "options_scheme_default"
+msgstr "(پیش فرض)"
+
+msgid "options_protocol_direct"
+msgstr "مستقیم"
+
+msgid "options_protocol_useDefault"
+msgstr "(استفاده از پیش فرض)"
+
+msgid "options_proxy_single"
+msgstr "استفاده از پروکسی بالا برای همه ی پروتکل ها."
+
+msgid "options_proxy_expand"
+msgstr "نمایش پیشرفته"
+
+msgid "options_group_bypassList"
+msgstr "لیست استثنا"
+
+msgid "options_bypassListHelp"
+msgstr ""
+"سرورهایی که نمیخواهید برای آن ها از پروکسی استفاده کنید : ( هرکدام در یک خط "
+". )"
+
+msgid "options_bypassListHelpLinkText"
+msgstr "( فرانویسه و بیشتر فراهم است .... )"
+
+msgid "options_group_pacUrl"
+msgstr "آدرس PAC"
+
+msgid "options_pacUrlHelp"
+msgstr ""
+"اسکریپ PAC از این آدرس بروزرسانی میشود . درصورت خالی بودن ، اسکریپت زیر به "
+"صورت مستقیم استفاده میشود ."
+
+msgid "options_pacUrlFile"
+msgstr ""
+"پروفایل های PAC به همراه فایل : آدرس ها تنها میتوانند مستقیما اعمال شوند . "
+"به دلیل محدودیت مرورگر فایل های محلی دسترسی قابل دسترسی نمیباشند که سبب "
+"میشود که نتوان از آن ها به عنوان نتایج پروفایل استفاده کرد."
+
+msgid "options_pacUrlFileDisabled"
+msgstr ""
+"از اینرو ، شما نمیتوانید از فایل های PAC محلی استفاده نمایید . شما میتوانید "
+"یک پروفایل PAC جدید بسازید اگر واقعا نیاز هست ."
+
+msgid "options_group_pacScript"
+msgstr "اسکریپت PAC"
+
+msgid "options_pacScriptLastUpdate"
+msgstr "دانلود اسکریپت PAC در تاریخ $TIME$:"
+
+msgid "options_pacScriptObsolete"
+msgstr ""
+"اسکریپ PAC به دلیل تغییر آدرس منسوخ میباشد . دکمه ی دانلود بالا را برای بروز "
+"رسانی فشاردهید ."
+
+msgid "options_group_virtualProfile"
+msgstr "پرووفایل مجازی"
+
+msgid "options_virtualProfileTarget"
+msgstr "هدف"
+
+msgid "options_virtualProfileTargetHelp"
+msgstr ""
+"در هنگام اعمال این پروفایل ، دقیقا همانند پروفایل انتخاب شده ی پایینی عمل "
+"میکند ."
+
+msgid "options_group_virtualProfileReplace"
+msgstr "مهاجرت به پروفایل مجازی"
+
+msgid "options_virtualProfileReplace"
+msgstr "پروفایل هدف را جایگزین کنید"
+
+msgid "options_virtualProfileReplaceHelp"
+msgstr ""
+"شما میتوانید با مهاجرت دادن تنظیمات موجود از پروفایل مجازی  بجای $PROFILE$ "
+"استفاده کنید . این عمل تمامی قوانین موجود در $PROFILE$ را بروزرسانی میکند و "
+"آن ها را ارجاع به پروفایل مجازی میدهد ، که این کارباعث میشود نتایج پروفایل "
+"را بتوان در این جا کنترل کرد."
+
+msgid "options_group_ruleListConfig"
+msgstr "تنظیمات لیست قوانین"
+
+msgid "options_ruleListFormat"
+msgstr "فرمت لیست قوانین"
+
+msgid "options_group_ruleListResult"
+msgstr "نتایج پروفایل های لیست قوانین"
+
+msgid "options_ruleListMatchProfile"
+msgstr "انطباق پروفایل"
+
+msgid "options_ruleListDefaultProfile"
+msgstr "پروفایل پیش فرض"
+
+msgid "options_group_ruleListUrl"
+msgstr "آدرس لیست قوانین"
+
+msgid "options_ruleListUrlHelp"
+msgstr ""
+"لیست قوانین از این آدرس به روز رسانی میشود ، در صورت خالی بودن ، متن بعدی "
+"پردازش میشود."
+
+msgid "options_group_ruleListText"
+msgstr "متن لیست قوانین"
+
+msgid "options_ruleListLastUpdate"
+msgstr "تاریخ دانلود لیست قوانین  $TIME$:"
+
+msgid "options_ruleListObsolete"
+msgstr ""
+"لیست قوانین به دلیل تغییر آدرس منسوخ میباشد . دکمه ی دانلود بالا را برای "
+"بروز رسانی فشاردهید ."
+
+msgid "options_group_switchRules"
+msgstr "قوانین سوییچ"
+
+msgid "options_sort"
+msgstr "ترتیب"
+
+msgid "options_conditionType"
+msgstr "نوع شرط"
+
+msgid "options_showConditionTypeHelp"
+msgstr "نمایش کمک"
+
+msgid "options_conditionDetails"
+msgstr "جزییات شرط"
+
+msgid "options_resultProfile"
+msgstr "پروفایل"
+
+msgid "options_conditionActions"
+msgstr "عملیات ها"
+
+msgid "options_addCondition"
+msgstr "افزودن شرط"
+
+msgid "options_cloneRule"
+msgstr "کپی"
+
+msgid "options_switchAttachedProfileInCondition"
+msgstr "قوانین لیست قوانین"
+
+msgid "options_switchAttachedProfileInConditionDetails"
+msgstr "( هرگونه درخواست منطبق بر لیست پایین )"
+
+msgid "options_switchAttachedProfileInConditionDisabled"
+msgstr "( قوانین لیست قوانین غیرفعالند )"
+
+msgid "options_switchDefaultProfile"
+msgstr "پیش فرض"
+
+msgid "options_hostLevelsBetween"
+msgstr "≤ سطوح میزبان ≤"
+
+msgid "options_hourBetween"
+msgstr "≤ current hour ≤"
+
+msgid "options_weekDayShort_0"
+msgstr "Su"
+
+msgid "options_weekDayShort_1"
+msgstr "Mo"
+
+msgid "options_weekDayShort_2"
+msgstr "Tu"
+
+msgid "options_weekDayShort_3"
+msgstr "We"
+
+msgid "options_weekDayShort_4"
+msgstr "Th"
+
+msgid "options_weekDayShort_5"
+msgstr "Fr"
+
+msgid "options_weekDayShort_6"
+msgstr "Sa"
+
+msgid "options_group_conditionHelp"
+msgstr "درباره ی انوع شروط"
+
+msgid "options_group_attachProfile"
+msgstr "واردکردن لیست های قوانین آنلاین"
+
+msgid "options_attachProfile"
+msgstr "افزوردن لیست قوانین"
+
+msgid "options_attachProfileHelp"
+msgstr ""
+"شما میتوانید با افزودن لیست قوانین از مجموعه های آنلاین شروطی که توسط دیگران "
+"منتشر شده استفاده نمایید ."
+
+msgid "options_modalHeader_welcome"
+msgstr "به SwitchyOmega خوش آمدید"
+
+msgid "options_welcomeNormal"
+msgstr ""
+"شما با موفقیت SwitchyOmega را نصب نموده اید ، برترین تغییر دهنده ی پروکسی."
+
+msgid "options_welcomeNormalGuide"
+msgstr ""
+"لطفا به SwitchyOmega از طریق صفجه ی تنظیمات ، پروکسی های خود را معرفی کنید ."
+
+msgid "options_welcomeUpgrade"
+msgstr ""
+"شما با موفقیت به SwitchyOmega ارتقا پیدا کرده اید ، نگران نباشید ، تمامی "
+"تنظیمات شما به طور کامل حفظ شده اند ."
+
+msgid "options_welcomeUpgradeGuide"
+msgstr "خب بریم سراغ آموزش کوچیکی از صفحه ی تنظیمات جدید."
+
+msgid "options_guideNext"
+msgstr "بعدی"
+
+msgid "options_guideDone"
+msgstr "تمام"
+
+msgid "options_guideSkip"
+msgstr "بیخیال آموزش"
+
+msgid "options_modalHeader_applyOptions"
+msgstr "ثبت تنظیمات"
+
+msgid "options_optionsNotSaved"
+msgstr ""
+"تغییرات شما بر روی تنظیمات ذخیره نشده است و درصورت ادامه از بین خواهند رفت !"
+
+msgid "options_applyOptionsRequired"
+msgstr "قبل از ادامه دادن تنظمات خود را ثبت کنید."
+
+msgid "options_applyOptionsConfirm"
+msgstr "آیا میخواهید تنظیمات خود را ذخیره و اعمال کنید ؟"
+
+msgid "options_modalHeader_renameProfile"
+msgstr "تغییرنام پروفایل"
+
+msgid "options_renameProfileName"
+msgstr "اسم جدید پروفایل"
+
+msgid "options_profileNameConflict"
+msgstr "یک پروفایل با این نام وجود دارد."
+
+msgid "options_profileNameReserved"
+msgstr "نام های پروفایل که با دو\"_\"(خط زیر) شروع میشوند رزرو میباشند."
+
+msgid "options_profileNameHidden"
+msgstr ""
+"پروفایل هایی که نامشان با دو زیر خط \"_\" شروع میشوند در منوی بالاپر مخفی "
+"میباشند . هرجند ، در مکان هایی مانند نتایج پروفایل متغیر ، قابل استفاده اند."
+
+msgid "options_modalHeader_replaceProfile"
+msgstr "جایگزینی پروفایل"
+
+msgid "options_replaceProfile"
+msgstr "جایگزینی پروفایل"
+
+msgid "options_replaceProfileConfirm"
+msgstr "آیا قصد جایگزینی $FromProfile$ را با $ToProfile$ دارید ؟"
+
+msgid "options_replaceProfileHelp"
+msgstr ""
+"در صورت ادامه ، تمامی قوانین مربوط به $FromProfile$ بروز رسانی میشوند تا عضو "
+"$ToProfile$ شوند . دیگر تنظیمات ، همانند پروفایل آغازین و تغییر سریع به صورت "
+"مناسب تغییر میکنند . هرچند ، این دو پروفایل تغییر یا حذف نمیشوند ."
+
+msgid "options_replaceProfileSuccess"
+msgstr "تنظیمات بروزرسانی شد."
+
+msgid "options_modalHeader_deleteProfile"
+msgstr "حذف پروفایل"
+
+msgid "options_deleteProfileConfirm"
+msgstr "آیا از حذف نمودن پروفایل های زیرمطمئن هستید ؟"
+
+msgid "options_modalHeader_cannotDeleteProfile"
+msgstr "عدم موفقیت در حذف پروفایل"
+
+msgid "options_profileReferredBy"
+msgstr "این پروفایل قابل حذف نمیباشد چونکه توسط این پروفایل ها صدا میشود :"
+
+msgid "options_modifyReferringProfiles"
+msgstr ""
+"قبل از حذف شما باید این پروفایل ها را تغییر دهید و از صدا زدن این پروفایل "
+"جلوگیری کنید ."
+
+msgid "options_profileNameEmpty"
+msgstr "اسم پروفایل نمیتواند خالی باشد."
+
+msgid "popup_title"
+msgstr "بالاپر SwitchyOmega"
+
+msgid "options_modalHeader_proxyAuth"
+msgstr "تصدیق پروکسی"
+
+msgid "options_proxyAuthUsername"
+msgstr "نام کاربری"
+
+msgid "options_proxyAuthPassword"
+msgstr "رمز عبور"
+
+msgid "options_proxyAuthNone"
+msgstr "بدون تصدیق"
+
+msgid "options_modalHeader_deleteRule"
+msgstr "حذف قانون"
+
+msgid "options_deleteRuleConfirm"
+msgstr "واقعا قصد حذف نمودن قانون را دارید ؟"
+
+msgid "options_deleteRule"
+msgstr "پاک کردن"
+
+msgid "options_modalHeader_resetRules"
+msgstr "ریست کردن قوانین"
+
+msgid "options_resetRulesConfirm"
+msgstr ""
+"آیا از تغییر دادن نتایج پروفایل تمامی قوانین به پروفایل زیر مطمئن هستید ؟"
+
+msgid "options_resetRules"
+msgstr "ریست کردن قوانین"
+
+msgid "options_resetRules_help"
+msgstr "تنظیم پورفایل برای تمام کاربران"
+
+msgid "options_modalHeader_deleteAttached"
+msgstr "حذف لیست قوانین"
+
+msgid "options_deleteAttachedConfirm"
+msgstr "آیا از حذف نمودن لیست قوانین از پروفایل فعلی مطمئن هستید ؟"
+
+msgid "options_ruleListLineCount"
+msgstr "قوانین : $COUNT$ خط"
+
+msgid "options_deleteAttached"
+msgstr "حذف لیست قوانین"
+
+msgid "options_modalHeader_newProfile"
+msgstr "پروفایل جدید"
+
+msgid "options_newProfileName"
+msgstr "اسم پروفایل"
+
+msgid "options_profileType"
+msgstr "لطفا نوع پروفایل را انتخاب نمایید :"
+
+msgid "options_profileTypeFixedProfile"
+msgstr "پروفایل پروکسی"
+
+msgid "options_profileDescFixedProfile"
+msgstr "تونل ترافیک از طریق پروکسی سرور ها."
+
+msgid "options_profileTypePacProfile"
+msgstr "پرفایل PAC"
+
+msgid "options_profileDescPacProfile"
+msgstr "انتخاب پروکسی ها از طریق اسکریپ PAC آنلاین/محلی ."
+
+msgid "options_profileDescMorePacProfile"
+msgstr ""
+"شما در صورتی که یک اسکریپت PAC یا آدرس مرجوعه به آن را دارید نیازمند این "
+"میشوید .درصورت عدم آشنایی با PAC تلاش برای ساخت یک نمونه نکنید ."
+
+msgid "options_profileTypeSwitchProfile"
+msgstr "پروفایل متغیر"
+
+msgid "options_profileDescSwitchProfile"
+msgstr ""
+"اعمال پروفایل های مختلف به صورت خودکار بر روی شروط گوناگون از جمله دامنه یا "
+"الگو ها .\n"
+" شما میتوانید از قوانین منتظر شده ی آنلاین برای جا به جایی راحتر بین پروفایل "
+"نیز استفاده کنید ( جایگزین مود AutoSwitch + لیست قوانین .)"
+
+msgid "options_profileTypeRuleListProfile"
+msgstr "پروفایل لیست پروفایل"
+
+msgid "options_profileDescRuleListProfile"
+msgstr "استفاده ی مجدد از مجموعه ی قوانین آنلاین منتشر شده توسط دیگران ."
+
+msgid "options_profileTypeVirtualProfile"
+msgstr "پروفایل مجازی"
+
+msgid "options_profileDescVirtualProfile"
+msgstr ""
+"یک پروفایل مجازی همانند هرگونه پروفایل دیگر در حین تقاضا عمل میکند . با "
+"SwitchProfile خوب عمل میکند ، که این امکان را به شما میدهد که نتایج چندین "
+"شرط را با یک کلیک تغییر دهید."
+
+msgid "options_createProfile"
+msgstr "ساختن"
+
+msgid "options_modalHeader_resetOptions"
+msgstr "ریست کردن تنظیمات"
+
+msgid "options_resetOptionsConfirm"
+msgstr ""
+"آیا از ریست کردن تنظیمات اطمینان دارید ؟ تمامی پروفایل ها و تنظیمات از بین "
+"خواهند رفت !"
+
+msgid "options_formInvalid"
+msgstr "لطفا خطاهای موجود در صفحه را تصحیح کنید."
+
+msgid "options_profileNotFound"
+msgstr "پروفایل $PROFILE$ وجود ندارد ! تنظیمات ممکن است خراب شده باشند ."
+
+msgid "options_resetSuccess"
+msgstr "تنظیمات ریست شد ."
+
+msgid "options_saveSuccess"
+msgstr "تنظیمات ذخیره شد ."
+
+msgid "options_importSuccess"
+msgstr "تنظیمات با موفقیت فراگیری شدند ."
+
+msgid "options_importFormatError"
+msgstr "فایل پشتیبان غیرمعتبر !"
+
+msgid "options_importDownloadError"
+msgstr "خطا در حین دانلود فایل پشتیبان !"
+
+msgid "options_profileDownloadSuccess"
+msgstr "پروفایل با موفقیت بروزسانی شد ."
+
+msgid "options_profileDownloadError"
+msgstr "خطا در حین دانلود داده ی پروفایل !"
+
+msgid "options_downloadProfileNow"
+msgstr "هم اکنون پروفایل را دانلود کنید"
+
+msgid "options_guide_fixedProfileStep"
+msgstr ""
+"یک <b> پروفایل پروکسی  </b>شامل تنظیماتی حاوی IP سرور&amp; پورت پروکسی میشود "
+".<br>پروفایل ها پایه ای ترین واحدهای تنظیمات در SwitchyOmega میباشند .<br> "
+"ما یک پروفایل آزمایشی برای شما درست کردیم . امتحانش کنید ."
+
+msgid "options_guide_fixedServersStep"
+msgstr ""
+"شما میتوانید سرور پروکسی و پورت آن را هرجور دوست دارید در اینجا وارد "
+"کنید.<br>SwitchyOmega <b> دارای سرور های پروکسی نمیباشد .</b> <br>در صورت "
+"عدم اطلاع از چگونگی پر کردن این مقادیر ،  لطفا با فراهم کننده ی شبکه تماس "
+"گرفته یا راهنمای نرم افزار پروکسی را مطالعه فرمایید ."
+
+msgid "options_guide_autoSwitchProfileStep"
+msgstr ""
+"شما میتوانید با استفاده از قدرت<b> پروفایل متغیر</b> به صورت خودکار ، پروکسی "
+"های  SwitchyOmega  را عوض کنید .<br>با اینجال ، قاابلیت های این پروفایل در "
+"این راهنمایی کوتاه قابل بیان نمیباشد . <br> شما میتوانید بعدا برای فعال کردن "
+"قدرت های این پروفایل آن را باز کنید ."
+
+msgid "options_guide_addMoreProfilesStep"
+msgstr ""
+"به پروفایل بیشتری نیازمندید ؟ شما همیشه میتوانید <b> پروکسی ، سوییچ و یا "
+"پروفایل های دیگری </b> <br> را برای نیاز های پروکسی خود اضافه نمایید . <br> "
+"از پروکسی زدن لذت ببرید !"
+
+msgid "options_guide_conditionStep"
+msgstr ""
+"SwitchyOmega میتوانید پروفایل های متفاوتی را بر اساس <b>شروط </b>تقاضا کند "
+".<br>برای مثال ، شرط <b>فرانویسه ی میزبان </b> به شما این قابلیت را میدهد که "
+"پروفایلی برای تمامی آدرس های یک دامنه تعیین کنید ."
+
+msgid "options_guide_conditionTypeStep"
+msgstr ""
+"شما میتوانید نوع های گوناگونی از شرط ها را برای انتخاب و انطباق میزبان یا "
+"آدرس URL استفاده کنید .<br> بر روی علامت سوال کنید کنید تا راهنمای نوع ها "
+"باز شود."
+
+msgid "options_guide_conditionProfileStep"
+msgstr ""
+"SwitchyOmega پروفایل انتخاب شده را بر روی<b> هرگونه درخواستی که با شروط "
+"منطبق باشد اعمال میکند .</b> <br> <b>پروفایل خاص \"[مستقیم]\"</b>  باعث "
+"میشود تا درخواست بدون هیچ پروکسی ای ارسال شود ."
+
+msgid "options_guide_switchDefaultStep"
+msgstr ""
+"اگر هیچ گونه شرطی منطبق بر درخواست نباشد ، پروفایل \"پیش فرض\" استفاده خواهد "
+"شد .<br> شروط همیشه از<b> بالا به پایین</b> در نظر گرفته میشوند .<br> شما "
+"میتوان نظم آن را با گرفتن آیکون نظم (sort) عوض کنید ."
+
+msgid "options_guide_applySwitchProfileStep"
+msgstr ""
+"وقتی انجام تنظیمات پروفایل متغییر(سوییچ) به پایان رسید ، فراموش نکنید که <b> "
+"در منونی بالاپر(popup) آن را فعال کنید.</b><br/> آیکون به شما <b>نتیجه ی "
+"نهایی </b> پروفایل اعمال شده در تب جاری را نشان میدهد <br/> <b>شناور "
+"ماندن</b> بر روی آیکون توضیحات اجمالی به شما نشان خواهد داد ."
+
+msgid "popup_externalProfile"
+msgstr "(پروفایل خارجی)"
+
+msgid "popup_externalProfileName"
+msgstr "نام پروفایل"
+
+msgid "popup_proxyNotControllable_app"
+msgstr ""
+"تنظیمات پروکسی توسط دیگر برنامه (ها) یا افزونه (ها) میدیریت میشوند . لطفا یا "
+"آن ها را غیرفعال کرده یا برنامه یا افزونه ی مشکل ساز را حذف نمایید ."
+
+msgid "popup_proxyNotControllable_policy"
+msgstr ""
+"تنظیمات پروکسی توسط policy ها سیستم کنترل میشوند . لطفا با آدمین تماس بگیرید "
+"."
+
+msgid "popup_proxyNotControllable_unknown"
+msgstr ""
+"تنظیمات پروکسی قابل کنترل نیست . لطفا تنظیمات سیستم یا مرورگر را بررسی کنید."
+
+msgid "popup_proxyNotControllable_disabled"
+msgstr ""
+"تنظیمات پروکسی بخاطر درخواست مستقیم دیگر برنامه (ها) یا افزونه (ها) غیرفعال "
+"شده است ."
+
+msgid "popup_proxyNotControllable_upgrade"
+msgstr "تنظیمات پروکسی توسط ورژن جدیدی از SwitchyOmega کنترل میشود ."
+
+msgid "popup_proxyNotControllableDetails"
+msgstr ""
+"شما نمیتوانید پروفایل ها را توسط SwitchyOmega عوض نمایید ، مگر اینکه مشکلات "
+"بالا را حل نمایید ."
+
+msgid "popup_proxyNotControllableDetails_upgrade"
+msgstr ""
+"شما نمیتوانید از دو (یا چند) ورژن SwitchyOmega به طور همزمان استفاده کنید . "
+"لطفا یکی از آن ها را غیرفعال کنید ."
+
+msgid "popup_proxyNotControllableManage"
+msgstr "میدیریت افزونه"
+
+msgid "popup_addConditionTo"
+msgstr "افزودن شرط به"
+
+msgid "popup_addCondition"
+msgstr "افزودن شرط"
+
+msgid "popup_showOptions"
+msgstr "تنظیمات"
+
+msgid "popup_reportIssues"
+msgstr "گزارش مشکلات"
+
+msgid "popup_errorLog"
+msgstr "ذخیره لاگ خطا"
+
+msgid "popup_requestErrorCount"
+msgstr "$COUNT$ خطای منبع"
+
+msgid "popup_requestErrorHeading"
+msgstr "عدم موفقیت در بارگزاری منابع"
+
+msgid "popup_requestErrorWarning"
+msgstr ""
+"بارگزاری تعدا کمی از منابع بخاطر مشکلات شبکه ، سرور پروکسی یا صفحه ی وب به "
+"مشکل برخورد ."
+
+msgid "popup_requestErrorWarningHelp"
+msgstr ""
+"SwitchyOmega تنها گزارش دهنده این خطاها میباشد ، نه ایجاد کننده ی آن ها ."
+
+msgid "popup_requestErrorAddCondition"
+msgstr ""
+"شما میتوانید دامین های زیر را بررسی کنید و در صورت نیاز از پروکسی برای آن ها "
+"استفاده نمایید ."
+
+msgid "popup_requestErrorCannotAddCondition"
+msgstr ""
+"شما در صورتی میتوانید شرط متغییر ( سوییچ) برای آن ها تعیین کنید که از "
+"پروفایل متغییر استفاده کرده باشید ."
+
+msgid "popup_configureMonitorWebRequests"
+msgstr "تنظیم مانیتور شبکه"
+
+msgid "options_resultProfileForSelectedDomains"
+msgstr "از این پروفایل برای تمامی دامنه های منتخب استفاده کن"
+
+msgid "popup_issueTemplate"
+msgstr ""
+"\n"
+"\n"
+"\n"
+"<!-- لطفا توضیحات خود را در بالای این خط بنویسید. -->\n"
+"SwitchyOmega $projectVersion$↵\n"
+"$userAgent$"
+
+msgid "browserAction_profileDetails_PacProfile"
+msgstr "( اسکریپت PAC )"
+
+msgid "browserAction_profileDetails_SystemProfile"
+msgstr "( کنترل شده توسط دیگر افزونه ها یا محیط )"
+
+msgid "browserAction_profileDetails_DirectProfile"
+msgstr "(عدم استفاده از هرگونه پروکسی)"
+
+msgid "browserAction_profileDetails_SwitchProfile"
+msgstr "(جابه جایی بر اساس شروط)"
+
+msgid "browserAction_profileDetails_RuleListProfile"
+msgstr "(جابه جایی بر اساس لیست قوانین)"
+
+msgid "browserAction_titleNormal"
+msgstr "SwitchyOmega :: $PROFILE$"
+
+msgid "browserAction_titleWithResult"
+msgstr ""
+"SwitchyOmega ::  $1:PROFILE$\n"
+" $3:DETAILS$"
+
+msgid "browserAction_titleNewerOptions"
+msgstr ""
+"خطا : یک ورژن جدید تر از SwitchOmega  برای اجرای تنظیمات دخیره شده نیازمند "
+"است ."
+
+msgid "browserAction_titleOptionError"
+msgstr ""
+"خطا : تنظیمات دخیره شده خراب شده اند .برای ریست کردن تنظیمات کلیک کنید ."
+
+msgid "browserAction_titleDownloadFail"
+msgstr "اخطار: شکست در دانلود اسکریپت PAC و/یا لیست های قوانین ."
+
+msgid "browserAction_titleExternalProxy"
+msgstr "نکته : تنظیمات پروکسی هم اکنون توسط دیگر برنامه (ها) مدیریت میشود ."
+
+msgid "browserAction_titleInspect"
+msgstr "[بررسی] $URL$"
+
+msgid "browserAction_defaultRuleDetails"
+msgstr "(پیش فرض)"
+
+msgid "browserAction_directResult"
+msgstr "مستقیم"
+
+msgid "browserAction_attachedPrefix"
+msgstr "(RL) "
+
+msgid "browserAction_tempRulePrefix"
+msgstr "(موقت) "
+
+msgid "contextMenu_inspectPage"
+msgstr "بررسی پروکسی مورد استفاده برای این صفحه"
+
+msgid "contextMenu_inspectFrame"
+msgstr "بررسی پروکسی مورد استفاده برای این فریم"
+
+msgid "contextMenu_inspectLink"
+msgstr "بررسی پروکسی مورد استفاده اگر لینک باز شود"
+
+msgid "contextMenu_inspectElement"
+msgstr "بررسی پروکسی مورد استفاده برای این المان"
+
+msgid "contextMenu_enableQuickSwitch"
+msgstr "فعال سازی تغییر سرعتی"

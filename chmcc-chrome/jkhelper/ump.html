@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UMP监控</title>
+    <link rel="stylesheet" type="text/css" href="css/ump/ump.css"/>
+    <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+    <script src="js/utils/GlobalUtils.js"></script>
+    <script type="text/javascript" src="js/ump/ump.js"></script>
+</head>
+<body>
+<div id="operate" style="position:absolute; left:0; top:0; overflow:hidden;background: #FFF;width:40px;height:20px;z-index:3;">
+    <table border="1">
+        <tr>
+            <td>选择显示模式：</td>
+            <td colspan="3">
+                <input id="normalAddress" class="group" type="button" value="常用地址"/>
+            </td>
+        </tr>
+        <tr>
+            <td><input id="inputKey" class="group" type="button" value="监控右侧输入key"/></td>
+            <td>
+                <textarea name="message" id="inputKeys" rows="4" cols="60" style="height: 90%; width: 95%;"></textarea>
+            </td>
+        </tr>
+    </table>
+    <input id="hidden" style="display:inline-block;width:40px;position:absolute;top:0;left:0; z-index:3;" type="button"
+           value="打开"/>
+</div>
+</body>
+</html>

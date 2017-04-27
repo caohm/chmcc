@@ -1,0 +1,21 @@
+[
+  [
+  { "ip": "assinfo0m.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "address.sdk 主" },
+  { "ip": "assinfo1m.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "address.sdk 主" },
+  { "ip": "assinfo2m.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "address.sdk 主" },
+  { "ip": "assinfo3m.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "address.sdk 主" },
+  { "ip": "assinfo0sa.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "address.sdk 从" },
+  { "ip": "assinfo1sa.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "address.sdk 从" },
+  { "ip": "assinfo2sa.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "address.sdk 从" },
+  { "ip": "assinfo3sa.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "address.sdk 从" },
+  { "ip": "aiceinfom.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "normalinvoice.sdk.jd.local 主" },
+  { "ip": "biceinfom.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "normalinvoice.sdk.jd.local 主" },
+  { "ip": "my10198m.mysqlmjq.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "normalinvoice.sdk.jd.local 从" },
+  { "ip": "my10199m.mysqlmjq.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "normalinvoice.sdk.jd.local 从" },
+  { "ip": "baseaream.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "四级地址 主" },
+  { "ip": "baseareasd.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "四级地址 从" },
+  { "ip": "baseareasa.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "四级地址 从" },
+  { "ip": "baseareasb.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "四级地址 从" },
+  { "ip": "baseareasc.mysql.jddb.com", "port": 3358, "inApp": "mysql", "inGroup": "四级地址 从" }
+  ]
+]

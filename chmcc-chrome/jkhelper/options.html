@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title message="ExtensionName"></title>
+    <link rel="stylesheet" type="text/css" href="css/options/options.css"/>
+    <script src="js/jquery-2.0.0.min.js"></script>
+    <script src="js/options/options.js"></script>
+    <script src="js/utils/GlobalUtils.js"></script>
+    <link rel="stylesheet" href="third/codemirror/lib/codemirror.css">
+    <!--<link rel="stylesheet" href="third/codemirror/addon/hint/show-hint.css">-->
+    <script src="third/codemirror/lib/codemirror.js"></script>
+    <!--<script src="third/codemirror/addon/hint/show-hint.js"></script>-->
+    <!--<script src="third/codemirror/addon/hint/xml-hint.js"></script>-->
+    <!--<script src="third/codemirror/mode/xml/xml.js"></script>-->
+    <script src="third/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="third/codemirror/addon/comment/continuecomment.js"></script>
+    <script src="third/codemirror/addon/comment/comment.js"></script>
+    <script src="third/codemirror/mode/javascript/javascript.js"></script>
+    <link rel="stylesheet" href="third/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="third/bootstrap/css/bootstrap-theme.min.css">
+    <script src="third/bootstrap/js/bootstrap.min.js"></script>
+    <script src="third/baidu/mod_jsonformat.js"></script>
+</head>
+<body class="chrome-bootstrap">
+<div class="frame">
+    <div class="navigation">
+        <h1>
+            <a class="automessage" href="#" message="options"></a>
+        </h1>
+        <ul class="menu">
+            <li class="selected">
+                <a class="automessage" href="#mjdos" message="options_mjdos"></a>
+            </li>
+            <li>
+                <a class="automessage" href="#ump" message="options_ump"></a>
+            </li>
+            <li>
+                <a class="automessage" href="#risking" message="options_risking"></a>
+            </li>
+            <li>
+                <a class="automessage" href="#guardian" message="options_guardian"></a>
+            </li>
+            <li>
+                <a class="automessage" href="#erp" message="options_erp"></a>
+            </li>
+            <li>
+                <a class="automessage" href="#about" message="about"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="mainview view">
+        <div id="mjdos" class=" selected">
+            <header id="page-header" style="transform: none;">
+                <h1 class="automessage" message="options_mjdos"></h1>
+            </header>
+            <div class="content">
+                <div class="checkbox">
+                    <label>
+                        <input id="options-autoBigArea" type="checkbox">
+                        <label class="automessage" for="options-autoBigArea"
+                               message="options_autoBigArea"></label>
+                    </label>
+                </div>
+                <div class="automessage" message="options_autoBigArea_tip"></div>
+                <h3 class="automessage" message="options_setInterval"></h3>
+                <div class="checkbox">
+                    <label>
+                        <input id="options-setInterval" type="text">
+                        <label class="automessage" for="options-setInterval"
+                               message="options_setInterval"></label>
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input id="options-setInterval-times" type="text">
+                        <label class="automessage" for="options-setInterval-times"
+                               message="options_setInterval_times"></label>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="ump">
+            <header>
+                <h1 class="automessage" message="options_ump"></h1>
+            </header>
+            <div class="content">
+                <textarea id="ump-config" name="ump-config"></textarea>
+                <span class="ump-config-tip red"></span>
+            </div>
+        </div>
+        <div id="risking">
+            <header>
+                <h1 class="automessage" message="options_risking"></h1>
+            </header>
+            <div class="content">
+                <textarea id="risking-config" name="risking-config"></textarea>
+                <span class="risking-config-tip red"></span>
+                <div class="checkbox">
+                    <label>
+                        <input id="risking-compareYesterday" type="checkbox">
+                        <label class="automessage" for="risking-compareYesterday"
+                               message="risking_compareYesterday"></label>
+                    </label>
+                    <label>
+                        <input id="risking-belowMiddle" type="checkbox">
+                        <label class="automessage" for="risking-belowMiddle"
+                               message="risking_belowMiddle"></label>
+                    </label>
+                    <label>
+                        <input id="risking-floatOverMiddle" type="checkbox">
+                        <label class="automessage" for="risking-floatOverMiddle"
+                               message="risking_floatOverMiddle"></label>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="guardian">
+            <header>
+                <h1 class="automessage" message="options_guardian"></h1>
+            </header>
+            <div class="content">
+            </div>
+        </div>
+        <div id="erp">
+            <header>
+                <h1 class="automessage" message="options_erp"></h1>
+            </header>
+            <div class="content">
+            </div>
+        </div>
+        <div id="about">
+            <header>
+                <h1 class="automessage" message="about"></h1>
+            </header>
+            <div class="content">
+                <p class="automessage" message="ExtensionName"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

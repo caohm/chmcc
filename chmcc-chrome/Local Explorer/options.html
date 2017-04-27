@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+     
+    <meta name="copyrights" content="(c) 2016 VNProDev.com">
+    <meta name="author" content="VNProDev.com">
+    <title>Local Explorer - File Manager for Chrome, open files and folders on local directories or network shares</title>
+    <meta name="description" content="VNProDev.com create popular Chrome extensions, Safari and Firefox addons, IE BHO plugins - Local Explorer - Click on web links to open Files & Folders on the local HDD, network shares, remote directories & files. Integrated with Windows Explorer.">
+    <meta name="keywords" content="browser extensions, addons, plugins, toolbars, chrome extension, firefox addon, safari extension, IE BHO">
+    
+    <link type="text/css" rel="stylesheet" href="options.css">
+
+    <script type="text/javascript" src="header.js"></script>
+    <script type="text/javascript" src="options.js"></script>
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id="update" style="display:none;">
+          <p class="heading bold red"><span class="i18n_text" i18n_text="congrats_updated_to_version"></span> <span id="version"></span></p>
+        </div>
+        <h1>Local Explorer <span class="i18n_text" i18n_text="settings"></span></h1>
+        <div id="allFields">
+            <div id="allOptions">
+                <p><input type="checkbox" id="optOpenFiles" checked disabled /><label for="optOpenFiles">  <span class="i18n_text" i18n_text="use_local_explorer_to_open_files_default"></span> </label></p>
+                <p><input type="checkbox" id="optOpenFolders" checked /><label for="optOpenFolders">  <span class="i18n_text" i18n_text="use_local_explorer_to_open_folders"></span> </label></p>
+                <p><input type="checkbox" id="optThreads" checked /><label for="optThreads">  <span class="i18n_text" i18n_text="enable_threads_for_ajax_pages"></span><br/>&nbsp;&nbsp;&nbsp;&nbsp;<span class="i18n_text" i18n_text="_disable_this_if_you_got_performance_issue_"></span></label></p>
+            </div>
+            <div id="fields" class="field">
+                <p class="heading"><span class="i18n_text" i18n_text="default_folder"></span></p>
+                <p><label><span class="i18n_text" i18n_text="click_browser_button_to_open_"></span> <input name="defaultFolder" id="defaultFolder" type="text" value="" size="40" /></label></p>
+                <p><span class="i18n_text" i18n_text="example_1_"></span> http://127.0.0.1/explorer.html</p>
+                <p><span class="i18n_text" i18n_text="example_2_"></span> Z:\mapped-network-drive</p>
+                <p><span class="i18n_text" i18n_text="example_3_"></span> \\Server\public-folder</p>
+            </div>
+            <div id="test" class="field">
+                <p class="heading"> <span class="i18n_text" i18n_text="test_link_"></span>&nbsp;&nbsp; <a target="_self" href="localexplorer:C:\Program Files">C:\Program Files</a></p>
+            </div>
+            <div class="field">
+                <p class="bold"> <span class="i18n_text" i18n_text="it_doesn_t_work__you_need_to_install_the_integration_module_"></span> <a href="http://www.vnprodev.com/browser-extensions/downloads/LocalExplorer-Setup.zip"><span class="i18n_text" i18n_text="install_now"></span>...</a></p>
+            </div>
+            <div class="field">
+                <p class="bold red"> <span class="i18n_text" i18n_text="guide_"></span> <a target="_blank" href="setup-guide-1280x800.png"><span class="i18n_text" i18n_text="how_to_set_up"></span>...</a></p>
+            </div>
+            <div class="field">
+                <p class="small"><input type="checkbox" id="optOptOut" checked /><label for="optOptOut"> <span>To support extensions development, we may collect debug info and display contextual offers. Tick this box to opt out.</span></label></p>
+            </div>
+        </div>
+        <div class="buttons-div">
+            <p><input type="button" class="i18n_value button" id="btnSave" i18n_value="save_settings" value="Save Settings" /></p>
+            <p id="notification"><span class="i18n_text" i18n_text="options_is_saved_"></span></p>
+        </div>
+        <div class="share-div">
+            <p><span class="i18n_text" i18n_text="is_it_helpful_for_you__it_could_help_other_people_too_"></span></p>
+            <p><a href="https://chrome.google.com/webstore/detail/eokekhgpaakbkfkmjjcbffibkencdfkl/reviews?utm_source=extension&utm_medium=localexplorer-chrome" target="_blank"><span class="i18n_text" i18n_text="rate_this_extension_now_"></span></a></p>
+            <p><iframe src="http://vnprodev.com/browser-extensions/local-explorer-share.php" frameborder="0" style="width: 100%; height: 160px; border: 0px;"></iframe></p>
+        </div>
+    </div>
+
+</body>
+</html>

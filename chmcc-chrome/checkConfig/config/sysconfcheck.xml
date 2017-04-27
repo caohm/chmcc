@@ -1,0 +1,114 @@
+<sysconfcheck>
+    <nginx>
+        <limit type="boolean" score="20" value="true"/> <!-- 是否有限流 -->
+        <worker_connections type="number" score="20"><!--每一个worker进程能并发处理的最大连接数（包含所有连接数）-->
+            <segment weight="0" range="(-10000,30000]"/>
+            <segment weight="5" range="(30000,65535)"/>
+            <segment weight="10" equals="65535"/>
+            <segment weight="5" range="(65535,10000)"/>
+        </worker_connections>
+        <gzip_comp_level type="number" score="20"><!--压缩级别，1压缩比最小处理速度最快，9压缩比最大但处理最慢，同时也最消耗CPU,一般设置为3就可以了）-->
+            <segment weight="0" range="(-10000,0]"/>
+            <segment weight="5" range="(0,3)"/>
+            <segment weight="10" equals="3"/>
+            <segment weight="5" range="(3,9]"/>
+            <segment weight="0" range="(9,10000)"/>
+        </gzip_comp_level>
+        <proxy_connect_timeout type="number" score="20"> <!--代理链接超时 超时不能超过75秒-->
+            <segment weight="0" range="(-10000,0]"/>
+            <segment weight="5" range="(0,60)"/>
+            <segment weight="10" equals="60"/>
+            <segment weight="5" range="(60,75]"/>
+            <segment weight="0" range="(75,10000)"/>
+        </proxy_connect_timeout>
+        <error_page type="string" score="20" value="['trade.jd.com/shopping/orderBack.html']"/>  <!--跳错误页-->
+    </nginx>
+    <jvm>
+        <Xmx type="number" score="100"> <!--JVM最大分配的内存--><!-- 此小项分数33.3分 小项之和为大项分数100分-->
+            <segment weight="0" range="(-2048,2048]"/><!--weight（权重取值0-10）代表值在负无穷到2G范围得分33.3*0/10-->
+            <segment weight="5" range="(1024,4096)"/><!--weight（权重取值0-10）代表值在负无穷到2G范围得分33.3*5/10-->
+            <segment weight="10" equals="4096"/><!--weight（权重取值0-10）代表值等于4G时得分33.3*10/10-->
+            <segment weight="5" range="(4096,8192]"/>
+            <segment weight="0" range="(8192,10000)"/>
+        </Xmx>
+    </jvm>
+    <tomcat>
+        <maxThreads type="number" score="50"> <!--tomcat最大链接数-->
+            <segment weight="0" range="(-10000,500]"/>
+            <segment weight="5" range="(500,1000)"/>
+            <segment weight="10" equals="1000"/>
+            <segment weight="5" range="(1000,2000]"/>
+            <segment weight="0" range="(2000,10000)"/>
+        </maxThreads>
+        <connectionTimeout type="number" score="50"> <!--tomcat最大链接超时-->
+            <segment weight="0" range="(-500,500]"/>
+            <segment weight="5" range="(500,20000)"/>
+            <segment weight="10" equals="20000"/>
+            <segment weight="5" range="(20000,3000]"/>
+            <segment weight="0" range="(30000,10000)"/>
+        </connectionTimeout>
+    </tomcat>
+    <jsf>
+        <timeout type="number" score="33.3"> <!--jsf链接超时-->
+            <segment weight="0" range="(-10000,100]"/>
+            <segment weight="5" range="(100,500)"/>
+            <segment weight="10" equals="500"/>
+            <segment weight="5" range="(500,1000]"/>
+            <segment weight="0" range="(1000,10000)"/>
+        </timeout>
+        <haveroute type="boolean" score="33.3" value="true"/> <!--是否有路由-->
+        <retries type="number" score="33.3"> <!--重试次数-->
+            <segment weight="0" range="(-1000,0]"/>
+            <segment weight="5" range="(0,3)"/>
+            <segment weight="10" equals="3"/>
+            <segment weight="5" range="(3,50]"/>
+            <segment weight="0" range="(50,1000)"/>
+        </retries>
+    </jsf>
+    <redis>
+        <maxactive type="number" score="33.3"><!--连接池的最大数据库连接数。设为0表示无限制 -->
+            <segment weight="0" range="(-10000,100]"/>
+            <segment weight="5" range="(100,500)"/>
+            <segment weight="10" equals="500"/>
+            <segment weight="5" range="(500,1000]"/>
+            <segment weight="0" range="(1000,10000)"/>
+        </maxactive>
+        <maxwait type="number" score="33.3"><!--最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制-->
+            <segment weight="0" range="(-10000,100]"/>
+            <segment weight="5" range="(100,200)"/>
+            <segment weight="10" equals="200"/>
+            <segment weight="5" range="(200,1000]"/>
+            <segment weight="0" range="(1000,10000)"/>
+        </maxwait>
+        <maxidle type="number" score="33.3"><!--最大空闲数，数据库连接的最大空闲时间。超过空闲时间，数据库连接将被标记为不可用，然后被释放。设为0表示无限制-->
+            <segment weight="0" range="(-10000,10]"/>
+            <segment weight="5" range="(10,50)"/>
+            <segment weight="10" equals="50"/>
+            <segment weight="5" range="(50,100]"/>
+            <segment weight="0" range="(100,10000)"/>
+        </maxidle>
+    </redis>
+    <db>
+        <maxactive type="number" score="33.3"><!--连接池的最大数据库连接数。设为0表示无限制 -->
+            <segment weight="0" range="(-10000,100]"/>
+            <segment weight="5" range="(100,500)"/>
+            <segment weight="10" equals="500"/>
+            <segment weight="5" range="(500,1000]"/>
+            <segment weight="0" range="(1000,10000)"/>
+        </maxactive>
+        <maxwait type="number" score="33.3"><!--最大建立连接等待时间。如果超过此时间将接到异常。设为-1表示无限制-->
+            <segment weight="0" range="(-10000,500]"/>
+            <segment weight="5" range="(500,1000)"/>
+            <segment weight="10" equals="1000"/>
+            <segment weight="5" range="(1000,2000]"/>
+            <segment weight="0" range="(2000,10000)"/>
+        </maxwait>
+        <maxidle type="number" score="33.3"><!--最大空闲数，数据库连接的最大空闲时间。超过空闲时间，数据库连接将被标记为不可用，然后被释放。设为0表示无限制-->
+            <segment weight="0" range="(-10000,50]"/>
+            <segment weight="5" range="(50,100)"/>
+            <segment weight="10" equals="100"/>
+            <segment weight="5" range="(100,500]"/>
+            <segment weight="0" range="(500,10000)"/>
+        </maxidle>
+    </db>
+</sysconfcheck>

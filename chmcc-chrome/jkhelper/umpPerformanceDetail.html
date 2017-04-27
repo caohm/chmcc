@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UMP方法性能分布</title>
+    <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+    <script src="js/utils/GlobalUtils.js"></script>
+    <link rel="stylesheet" href="third/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="third/bootstrap/css/bootstrap-theme.min.css">
+    <script src="third/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/umpPerformanceDetail/performanceDetail.css">
+    <script src="third/highcharts/js/highcharts.js"></script>
+    <script src="third/jsFlow/jsFlow.js"></script>
+    <script src="js/umpPerformanceDetail/performanceDetail.js"></script>
+</head>
+<body>
+<div style="display: none">
+    <form id="form" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-1 control-label" for="dType">时间维度</label>
+            <div class="col-sm-2">
+                <select class="form-control" name="dType" id="dType">
+                    <option value="">请选择</option>
+                    <option value="oneHour">小时</option>
+                    <option value="oneMinute">分钟</option>
+                </select>
+            </div>
+            <label class="col-sm-1 control-label" for="accessKey">Key</label>
+            <div class="col-sm-2">
+                <input type="text" name="accessKey" id="accessKey" class="form-control " placeholder="请输入key"
+                       value="payship-sdk.ShipmentExportServiceImpl.LF.getPromise311"/>
+            </div>
+            <label class="col-sm-1 control-label" for="xData">时间点</label>
+            <div class="col-sm-2">
+                <input type="text" name="xData" id="xData" class="form-control " placeholder="请输入时间点"
+                       value="1478245500000"/>
+            </div>
+            <div class="col-sm-2">
+                <span class="btn btn-info">查询</span>
+            </div>
+            <input type="hidden" name="appId"/>
+            <input type="hidden" name="timeStr" value="2016-11-04 13:44:00"/>
+            <input type="hidden" name="tpName" value="max"/>
+            <input type="hidden" name="type" value="tp"/>
+            <input type="hidden" name="yData" value="503"/>
+        </div>
+    </form>
+</div>
+<div id="container" style="width:100%;height:320px;"></div>
+
+</body>
+</html>
+

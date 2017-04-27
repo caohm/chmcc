@@ -1,0 +1,31 @@
+{
+   "background": {
+      "scripts": [ "header.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "icon32.png",
+      "default_title": "Local Explorer"
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "js": [ "header.js", "content.js" ],
+      "matches": [ "\u003Call_urls>" ],
+      "run_at": "document_start"
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google.com https://www.google-analytics.com https://ssl.google-analytics.com; object-src https://www.google.com https://www.google-analytics.com https://ssl.google-analytics.com 'self'",
+   "default_locale": "en",
+   "description": "__MSG_extDescription__",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "32": "icon32.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAh90bmA2HLJ2s+Xdu/EhcujLnd1eQM8hP4wl8l/n0KEghy+mOxTET9YYxXqjYuIUn2dbbSDt7PKuVHluurMVy5wWFjB04G/ZH9wqzo4D2BED0ldehfBj7HVGns1I/UjmlveDdlNc3izBCpaiGsEzw2I8x3HZHFv40df4Rg2vRLEBQk79mNUjaiMC8/WyXE8qh0uMZG41o//dKkbWLnLmUzHxXUd4EihsBZaT7gr2IetWsoQwrP//oTL1GDkPSh6tageRIrgV0EjgYC2M4npt1SAVc/vf2cqVI62WiRd9o7ctmHtb25oeUhsdcWgxvFLfh4tia5Shp309gHhRSUc07cwIDAQAB",
+   "manifest_version": 2,
+   "name": "Local Explorer - File Manager on web browser",
+   "options_page": "options.html",
+   "permissions": [ "tabs", "storage", "http://*/*", "https://*/*" ],
+   "short_name": "Local Explorer",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2016.6.21.0"
+}

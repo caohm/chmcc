@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title message="ExtensionName"></title>
+    <link rel="stylesheet" type="text/css" href="css/options/options.css"/>
+    <script src="js/jquery-2.0.0.min.js"></script>
+    <script src="js/options/options.js"></script>
+    <script src="js/utils/GlobalUtils.js"></script>
+    <link rel="stylesheet" href="third/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="third/codemirror/addon/hint/show-hint.css">
+    <script src="third/codemirror/lib/codemirror.js"></script>
+    <script src="third/codemirror/addon/hint/show-hint.js"></script>
+    <script src="third/codemirror/addon/hint/xml-hint.js"></script>
+    <script src="third/codemirror/mode/xml/xml.js"></script>
+    <link rel="stylesheet" href="third/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="third/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/portSurvival/portSurvival.css">
+    <script src="third/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body class="chrome-bootstrap">
+<div class="frame">
+    <div class="navigation">
+        <h1>
+            <a class="autoMessage" href="#" message="options"></a>
+        </h1>
+        <ul class="menu">
+            <li class="selected">
+                <a class="options-name autoMessage" href="#healthMonitoring" message="healthMonitoring_config"></a>
+            </li>
+        </ul>
+        <ul class="menu">
+            <li>
+                <a class="options-about autoMessage" href="#about" message="about"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="mainview view">
+        <div id="healthMonitoring" class=" selected">
+            <header>
+                <h1 class="autoMessage" message="healthMonitoring_config"></h1>
+            </header>
+            <div class="content">
+                <div class="checkboxs">
+                    <input id="health-openFileSystem" type="checkbox">
+                    <label class="autoMessage" for="health-openFileSystem" message="health_openFileSystem"></label>
+                </div>
+                <div>
+                    <textarea id="healthMonitoring_config" name="healthMonitoring_config"></textarea>
+                </div>
+            </div>
+
+        </div>
+        <div id="about">
+            <header>
+                <h1 class="autoMessage" message="about"></h1>
+            </header>
+            <div class="content">
+                <p class="autoMessage" message="ExtensionName"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

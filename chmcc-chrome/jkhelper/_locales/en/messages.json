@@ -1,0 +1,56 @@
+{
+  "ExtensionName": {
+    "message": "jkHelper"
+  },
+  "BrowserActionTitle": {
+    "message": "jkHelper"
+  },
+  "ExtensionDescription": {
+    "message": "jkHelper"
+  },
+  "options": {
+    "message": "options"
+  },
+  "options_mjdos": {
+    "message": "mjdos"
+  },
+  "options_ump": {
+    "message": "ump"
+  },
+  "options_risking": {
+    "message": "risking"
+  },
+  "options_guardian": {
+    "message": "guardian.gms"
+  },
+  "options_erp": {
+    "message": "erp"
+  },
+  "options_autoBigArea": {
+    "message": "AutoBigArea"
+  },
+  "options_setInterval": {
+    "message": "setInterval"
+  },
+  "options_setInterval_times": {
+    "message": "times"
+  },
+  "options_calc_aotustart": {
+    "message": "Auto start"
+  },
+  "risking_compareYesterday": {
+    "message": "Compare with yesterday"
+  },
+  "risking_belowMiddle": {
+    "message": "Below middle value"
+  },
+  "risking_floatOverMiddle": {
+    "message": "Floating over the middle value"
+  },
+  "about": {
+    "message": "about"
+  },
+  "save": {
+    "message": "save"
+  }
+}

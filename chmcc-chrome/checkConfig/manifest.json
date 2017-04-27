@@ -1,0 +1,73 @@
+﻿{
+  "manifest_version": 2,
+  "name": "__MSG_ExtensionName__",
+  "version": "0.0.2",
+  "default_locale": "zh_CN",
+  "description": "__MSG_ExtensionDescription__",
+  "background": {
+    "page": "background.html"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "default_title": "__MSG_BrowserActionTitle__",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "contextMenus",
+    "cookies",
+    "http://deploy.jd.com/*",
+    "http://ssa.jd.com/*",
+    "http://bmt.jd.com/*",
+    "tabs",
+    "tts",
+    "storage",
+    "declarativeContent",
+    "notifications",
+    "downloads",
+    "activeTab",
+    "\u003Call_urls>"
+  ],
+  "content_security_policy": "script-src 'self'  'unsafe-eval' ; object-src 'self' ;",
+  "content_scripts": [
+    {
+      "matches": [
+        "http://deploy.jd.com/welcome/*"
+      ],
+      "js": [
+        "js/utils/GlobalUtils.js",
+        "js/content/content_loadScript_DeployAutoCompare.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "http://*/configs_jd/configdetail.aspx?id=*",
+        "http://*/configs/configdetail.aspx?id=*",
+        "http://*/Configs/configdetail.aspx?id=*"
+      ],
+      "js": [
+        "js/utils/GlobalUtils.js",
+        "js/content/content_loadScript_ConfigManagerCompare.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    "custom/*",
+    "js/*",
+    "third/*"
+  ],
+  "options_page": "options.html"
+}

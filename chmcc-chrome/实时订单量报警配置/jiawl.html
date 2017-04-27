@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.0.0.min.js"></script>
+    <style>
+        .content{
+            width: 500px;
+            height: 200px;
+            word-break:break-all;
+            text-align: left;
+            vertical-align: text-top;
+        }
+        td{
+            border: 1px solid grey;
+        }
+        table{
+            border-collapse: collapse;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            /**
+             * 开关状态变换
+             */
+            $(".switchSelect").change(function(){
+                console.log($(this).val());
+            });
+
+            /**
+             * 脚本内容变换
+             */
+            $(".content").blur(function(){
+                console.log($(this).text());
+            });
+        });
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>监控项：</td>
+            <td>asdsd</td>
+        </tr>
+        <tr>
+            <td>状态：</td>
+            <td>
+                <select class="switchSelect">
+                    <option value="off">关</option>
+                    <option value="on" selected>开</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">自定义脚本</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="content" contenteditable="true">aaa</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

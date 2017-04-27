@@ -1,0 +1,84 @@
+[
+  {
+    "title": "轻松购",
+    "param": {
+      "soporder_sdk_count.e.gco.lf.total": { "name": "廊坊进入", "threshold": "90ms" },
+      "soporder_sdk_count.e.gco.B28.total": { "name": "马驹桥进入", "threshold": "90ms" },
+      "soporder_sdk_count.submit.total.lf": { "name": "廊坊提交", "threshold": "90ms" },
+      "soporder_sdk_count.submit.total.B28": { "name": "马驹桥提交", "threshold": "105ms" }
+    }
+  },
+  {
+    "title": "国际站",
+    "param": {
+      "soporder_sdk_count.e.gco.hk_lf.total": { "name": "进入结算页_hk_lf", "threshold": "100ms" },
+      "soporder_sdk_count.e.gco.hk.total": { "name": "进入结算页_hk", "threshold": "未知ms" },
+      "soporder_sdk_count.submit.total.hk_lf": { "name": "提交_hk_lf", "threshold": "100ms" },
+      "soporder_sdk_count.submit.total.hk": { "name": "提交_hk", "threshold": "未知ms" }
+    }
+  },
+  {
+    "title": "jos",
+    "param": {
+      "trade_jos.submit.total.LF": { "name": "提交_jos_LF", "threshold": "100ms" },
+      "trade_jos.submit.total.MJQ": { "name": "提交_jos_MJQ", "threshold": "150ms" }
+    }
+  },
+  {
+    "title": "通用下单和地址库",
+    "param": {
+      "verticalorder_sdk_count.vertical.submit.total.100014vertical.submit.total.100014.YZ": { "name": "手机充值", "threshold": "50ms" },
+      "verticalorder_sdk_count.vertical.submit.total.100702vertical.submit.total.100702.YZ": { "name": "一元抢宝", "threshold": "50ms" },
+      "address.AddressDAO.insertAddress": { "name": "插入地址", "threshold": "10ms" },
+      "address.AddressDAO.updateCommonAddress": { "name": "更新地址", "threshold": "10ms" },
+      "address.AddressDAO.deleteAddress": { "name": "删除地址", "threshold": "10ms" },
+      "address.AddressDAO.getAddressList": { "name": "获取地址列表", "threshold": "10ms" }
+    }
+  },
+  {
+    "title": "进入结算页",
+    "param": {
+      "soporder_sdk_count.e.gco.phone.total": { "name": "手机", "threshold": "80ms" },
+      "soporder_sdk_count.e.gco.phone.total_new": { "name": "手机New", "threshold": "90ms" },
+      "soporder_sdk_count.e.gco.B28.total": { "name": "马驹桥", "threshold": "100ms" },
+      "soporder_sdk_count.e.gco.lf.total": { "name": "廊坊", "threshold": "100ms" },
+      "soporder_sdk_count.e.gco.JOS.total": { "name": "微信手Q马驹桥", "threshold": "80ms" },
+      "soporder_sdk_count.e.gco.qTrade_lf.total": { "name": "微信手Q廊坊", "threshold": "80ms" },
+      "soporder_sdk_count.e.gco.seckill.total": { "name": "秒杀", "threshold": "50ms" }
+    }
+  },
+  {
+    "title": "提交订单",
+    "param": {
+      "soporder_sdk_count.submit.total.phone": { "name": "手机", "threshold": "100ms" },
+      "soporder_sdk_count.submit.total.B28": { "name": "马驹桥", "threshold": "100ms" },
+      "soporder_sdk_count.submit.total.lf": { "name": "廊坊", "threshold": "100ms" },
+      "soporder_sdk_count.submit.total.JOS": { "name": "微信手Q马驹桥", "threshold": "150ms" },
+      "soporder_sdk_count.submit.total.qTrade_lf": { "name": "微信手Q廊坊", "threshold": "200ms" },
+      "soporder_sdk_count.submit.total.seckill": { "name": "秒杀", "threshold": "250ms" }
+    }
+  },
+  {
+    "title": "常用地址",
+    "param": {
+      "address.export.service.AddressExportService.updateAddress": { "name": "更新地址", "threshold": "10ms" },
+      "address.export.service.AddressExportService.insertAddressList": { "name": "插入地址", "threshold": "10ms" },
+      "address.export.service.AddressExportService.deleteAddress": { "name": "删除地址", "threshold": "10ms" },
+      "address.export.service.AddressExportService.getAddressList": { "name": "地址列表", "threshold": "10ms" },
+      "address.export.service.AddressExportService.getAddressById": { "name": "根据ID获取地址", "threshold": "10ms" },
+      "address.export.service.AddressExportService.getAllDefaultAddress": { "name": "默认地址", "threshold": "10ms" }
+    }
+  },
+  {
+    "title": "四级地址",
+    "param": {
+      "new.service.primitive.address.service.getProvince.normal": { "name": "省", "threshold": "10ms" },
+      "new.service.primitive.address.service.getCitys.normal": { "name": "市", "threshold": "10ms" },
+      "new.service.primitive.address.service.getCountys.normal": { "name": "县", "threshold": "10ms" },
+      "new.service.primitive.address.service.getTowns.normal": { "name": "镇", "threshold": "10ms" },
+      "new.service.primitive.address.service.getNameById.normal": { "name": "getNameByID", "threshold": "10ms" },
+      "new.service.primitive.address.service.getIdNameMapByIds.normal": { "name": "getIdNameMapByIds", "threshold": "10ms" },
+      "new.service.primitive.address.service.checkAddress.normal": { "name": "checkAddress", "threshold": "10ms" }
+    }
+  }
+]
