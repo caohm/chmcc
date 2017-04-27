@@ -5,7 +5,7 @@
     <aop:aspectj-autoproxy proxy-target-class="true"/>
     <aop:config>
         <aop:aspect id="interfaceAspect" ref="adviceUtils">
-            <aop:pointcut id="interfaceAop" expression="execution(* org.chmcc.springmvc.service.interfaces..*.*(..))"/>
+            <aop:pointcut id="interfaceAop" expression="execution(* org.chmcc.springmvc.service..*.*(..))"/>
             <aop:around pointcut-ref="interfaceAop" method="doInterfaceAround"/>
         </aop:aspect>
         <aop:aspect id="serviceAspect" ref="adviceUtils">

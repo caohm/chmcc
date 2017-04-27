@@ -113,8 +113,7 @@ public class SystemLogAspect {
      * @return 方法描述
      * @throws Exception
      */
-    public static String getServiceMthodDescription(JoinPoint joinPoint)
-            throws Exception {
+    public static String getServiceMthodDescription(JoinPoint joinPoint) throws Exception {
         String targetName = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
         Object[] arguments = joinPoint.getArgs();

@@ -6,7 +6,6 @@
 
     <!-- 登录记录缓存 锁定10分钟 -->
     <cache name="username"
-
            eternal="false"
            timeToIdleSeconds="3600"
            timeToLiveSeconds="0"
@@ -15,7 +14,6 @@
     </cache>
 
     <cache name="roles"
-
            eternal="false"
            timeToIdleSeconds="3600"
            timeToLiveSeconds="0"
@@ -24,7 +22,6 @@
     </cache>
 
     <cache name="permissions"
-
            eternal="false"
            timeToIdleSeconds="3600"
            timeToLiveSeconds="0"
@@ -33,7 +30,6 @@
     </cache>
 
     <cache name="active"
-
            eternal="false"
            timeToIdleSeconds="3600"
            timeToLiveSeconds="0"
