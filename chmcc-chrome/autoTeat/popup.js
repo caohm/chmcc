@@ -1,6 +1,4 @@
-/**
- * Created by caohongming on 2016/9/26.
- */
+
 document.addEventListener('DOMContentLoaded', function () {
     var data = chrome.extension.getBackgroundPage().pageData;
     var dom = document.getElementById('result');

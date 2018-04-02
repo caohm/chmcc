@@ -1,6 +1,4 @@
-/**
- * Created by caohongming on 2016/9/26.
- */
+
 var links = document.getElementsByTagName('a');
 var list = [];
 var n, i, t;

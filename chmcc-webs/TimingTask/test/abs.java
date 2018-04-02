@@ -1,6 +1,4 @@
-/**
- * Created by caohm on 2016/7/15.
- */
+
 public class abs {
     static {
         System.out.println("abs static block");

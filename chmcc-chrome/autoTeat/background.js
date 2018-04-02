@@ -1,6 +1,4 @@
-/**
- * Created by caohongming on 2016/9/26.
- */
+
 function match(url) {
     var host = "null";
     if (typeof url == "undefined" || null == url)

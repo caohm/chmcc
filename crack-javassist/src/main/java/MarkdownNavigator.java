@@ -10,9 +10,6 @@ import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 
-/**
- * Created by An0nymous on 16/8/17.
- */
 public class MarkdownNavigator implements CrackIdeaPlugin {
     @Override
     public void crack(String version) throws Exception {

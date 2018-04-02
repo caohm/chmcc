@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.chmcc</groupId>
+    <artifactId>chmcc-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>${project.artifactId}</name>
+
+    <modules>
+        <module>chmcc-clients</module>
+        <module>tools</module>
+        <module>chmcc-webs</module>
+        <module>ssm</module>
+        <module>utils</module>
+        <module>mock</module>
+    </modules>
+    <properties>
+    </properties>
+    <dependencies>
+    </dependencies>
+</project>

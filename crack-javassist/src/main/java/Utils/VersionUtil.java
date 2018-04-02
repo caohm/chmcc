@@ -1,8 +1,5 @@
 package Utils;
 
-/**
- * Created by An0nymous on 16/8/8.
- */
 public class VersionUtil {
     public static int compareVersion(String version1, String version2) throws Exception {
         if (version1 == null || version2 == null) {

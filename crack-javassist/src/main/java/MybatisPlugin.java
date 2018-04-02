@@ -11,9 +11,7 @@ import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.LinkOption.NOFOLLOW_LINKS;
 
-/**
- * Created by An0nymous on 16/8/17.
- */
+
 public class MybatisPlugin implements CrackIdeaPlugin {
     @Override
     public void crack(String version) throws Exception {

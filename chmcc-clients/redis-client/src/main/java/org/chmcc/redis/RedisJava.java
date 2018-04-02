@@ -1,8 +1,6 @@
 package org.chmcc.redis;
 
-/**
- * Created by caohongming on 2016/8/30.
- */
+
 
 import redis.clients.jedis.Jedis;
 

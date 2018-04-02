@@ -1,6 +1,4 @@
-/**
- * Created by An0nymous on 16/8/17.
- */
+
 public class Crack {
     private static final String MYBATIS_PLUGIN = "Mybatis Plugin"; // https://www.codesmagic.com/
     private static final String MARKDOWN_NAVIGATOR = "Markdown Navigator"; // http://github.com/vsch/idea-multimarkdown

@@ -1,6 +1,4 @@
-/**
- * Created by caohm on 2016/7/15.
- */
+
 public class a {
     public static int getValue(int i) {
         int result = 0;

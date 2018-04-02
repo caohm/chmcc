@@ -4,9 +4,7 @@ import org.aspectj.lang.ProceedingJoinPoint;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * Created by caohongming on 2016/12/29.
- */
+
 public class AdviceUtils {
     private static final Logger logger = LoggerFactory.getLogger(AdviceUtils.class);
 

@@ -9,9 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by caohongming on 2016/12/15.
- */
+
 @MappedJdbcTypes(JdbcType.VARCHAR)
 public class ExampleTypeHandler extends BaseTypeHandler<String> {
 

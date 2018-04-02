@@ -1,5 +1,4 @@
 #* @implicitly included *#
-#* @vtlvariable name="exampleModule" type="org.chmcc.common.web.url.JdUrl"*#
 #* @vtlvariable name="localHost" type="org.chmcc.common.network.LocalHost"*#
 #* @vtlvariable name="stringEscapeUtils" type="org.apache.commons.lang.StringEscapeUtils" *#
 #* @vtlvariable name="response" type="javax.servlet.http.HttpServletResponse" *#
@@ -8,6 +7,5 @@
 #* @vtlvariable name="actionErrors" type="java.util.Collection<java.lang.String>"*#
 #* @vtlvariable name="actionMessages" type="java.util.Collection<java.lang.String>"*#
 #* @vtlvariable name="fieldErrors" type="java.util.Map<java.lang.String,java.util.List<java.lang.String>>"*#
-#* @vtlvariable name="assetModule" type="org.chmcc.common.web.url.JdUrl"*#
 #* @vtlmacrolibrary path="../webapp/WEB-INF/vm/macro.vm" *#
 

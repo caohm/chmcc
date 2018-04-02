@@ -7,9 +7,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by An0nymous on 16/8/17.
- */
+
 public class CrackUtil {
 
     public static void versionValidation(String version) throws Exception {

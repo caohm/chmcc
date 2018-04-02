@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                     http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context
+                     http://www.springframework.org/schema/context/spring-context.xsd"
+       default-autowire="byName">
+
+    <!-- 	<bean
+            class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+            <property name="locations">
+                <list>
+                    <value>classpath:jshop-production.properties</value>
+                    <value>classpath:important.properties</value>
+                </list>
+            </property>
+        </bean>
+     -->
+    <!-- 采用注解方式注入 -->
+
+    <bean id="jsonFileDataLoader" class="org.chmcc.mock.mockloader.JsonFileDataLoader">
+        <property name="jsonFilePath" value="testJson"></property>
+    </bean>
+
+    <bean class="org.chmcc.mock.mockloader.MockDataLoader" init-method="init">
+        <property name="mcokDataBeanList">
+            <list>
+                <bean class="org.chmcc.mock.mockloader.test.mockbean.MockLoaderFirst"></bean>
+            </list>
+        </property>
+        <property name="jsonFileDataLoader" ref="jsonFileDataLoader"></property>
+    </bean>
+</beans>

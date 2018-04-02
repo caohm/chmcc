@@ -1,10 +1,9 @@
 package com.chmcc.helloworld.dao.example.impl;
 
-import org.chmcc.common.dao.BaseDao;
-import org.chmcc.common.util.Query;
 import com.chmcc.helloworld.dao.example.ExampleDao;
 import com.chmcc.helloworld.domain.example.Example;
 
+import javax.management.Query;
 import java.util.List;
 
 /**

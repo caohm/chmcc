@@ -46,16 +46,7 @@
             <artifactId>jsp-api</artifactId>
             <version>2.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.chmcc.common</groupId>
-            <artifactId>chmcc-common-struts</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.chmcc.common</groupId>
-            <artifactId>chmcc-common-web</artifactId>
-            <version>1.0</version>
-        </dependency>
+
         <dependency>
             <groupId>com.chmcc.example</groupId>
             <artifactId>example-service</artifactId>

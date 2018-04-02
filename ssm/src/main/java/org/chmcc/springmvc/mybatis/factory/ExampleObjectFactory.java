@@ -5,9 +5,7 @@ import org.apache.ibatis.reflection.factory.DefaultObjectFactory;
 import java.util.Collection;
 import java.util.Properties;
 
-/**
- * Created by caohongming on 2016/12/15.
- */
+
 public class ExampleObjectFactory extends DefaultObjectFactory {
     public Object create(Class type) {
         return super.create(type);

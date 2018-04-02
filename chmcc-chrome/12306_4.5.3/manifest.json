@@ -1,0 +1,26 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "content_scripts": [ {
+      "all_frames": false,
+      "js": [ "jq.js", "12306_ticket_helper.user.js" ],
+      "matches": [ "http://dynamic.12306.cn/otsweb/*", "https://dynamic.12306.cn/otsweb/*", "http://*.etao.com/*", "http://*.tmall.com/*", "http://*.taobao.com/*" ],
+      "run_at": "document_idle"
+   } ],
+   "content_security_policy": "script-src 'self' https://github.com; object-src 'self';",
+   "converted_from_user_script": true,
+   "description": "帮您订票的小助手 by 木鱼 :-)",
+   "homepage_url": "http://www.fishlee.net/",
+   "icons": {
+      "16": "icons/icon_16.png",
+      "32": "icons/icon_32.png",
+      "48": "icons/icon_48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDEMsMdmKjGP/5g+zJXeE0WH6GquvUgKLAKL+7rexJlGezmYPSuVJ7OBSPcsznCtZCsQj1nzogC4gpQkGXpNhWsnhcA4ti0NaSHoTQV/Rxu+MCzxheIxhkcemAYi6lr7CyNKMFPHDE3Nt7h/2AUUIf9sGTyATPgc0F1uHUhQ7nucQIDAQAB",
+   "manifest_version": 2,
+   "name": "12306 火车票 订票助手 ",
+   "permissions": [ "http://www.12306.cn/", "https://*.12306.cn/*", "notifications" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "4.5.3"
+}

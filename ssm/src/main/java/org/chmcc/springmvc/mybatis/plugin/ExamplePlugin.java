@@ -10,9 +10,7 @@ import org.apache.ibatis.plugin.Signature;
 
 import java.util.Properties;
 
-/**
- * Created by caohongming on 2016/12/15.
- */
+
 @Intercepts({@Signature(
         type= Executor.class,
         method = "update",
